@@ -1,0 +1,7 @@
+Material		Dicke in cm	Zählerergebnis	Dichte in Grammprocubiccentimeter
+
+Aluminium	2,5		1806		2,71
+Messing	2,5		1067		8,40
+Trovidur		2,5		1942		1,38
+Eisen		2,5		1161		7,8
+Blei		2,5		738		11,35

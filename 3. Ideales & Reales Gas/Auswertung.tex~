@@ -1,0 +1,361 @@
+\documentclass{scrartcl}
+% Damit die Verwendung der deutschen Sprache nicht ganz so umst\"andlich wird,
+% sollte man die folgenden Pakete einbinden: 
+\usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc} % das Trennen der Umlaute
+\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
+                     % die W\"orter werden anhand der neue Rechtschreibung 
+		     % automatisch getrennt.
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            separate-uncertainty = true,
+            multi-part-units=single
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{amsfonts}
+
+
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Ideales und Reales Gas}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+\parindent 0pt
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Spannungskoeffizient $\alpha$ von Luft}
+Zur Bestimmung des Spannungskoeffizienten von Luft wurde ein Jollysches Gasthermometer verwendet. Zuerst wurde die Quecksilbersäule auf Höhe des Dorns eingestellt und ausgemessen. Dies ist der Referenzpunkt, um ein konstantes Volumen für die jeweiligen Messungen zu ermöglichen. Wodurch später die verschiedenen Höhendifferenzen genau bestimmt werden können. Anders als in der Hilfe angegeben wird das schädliche Volumen von Rezipient und Kapillare zusätzlich zur Glasausdehnung mit berücksichtigt. Daher muss die Formel aus der Hilfe zur Bestimmung von $\alpha$ erweitert werden zu:\\
+\begin{align*}
+\alpha=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}+\frac{p_K}{p_E}\left( \gamma+\frac{V_K}{V_R}\cdot \frac{1}{T}\right)
+\end{align*}
+Der barometrische Luftdruck wurde mittels digital Barometer auf 997mBar bzw. 747,82Torr bestimmt.
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[htbp]
+  \centering
+\caption{Bestimmung des Spannungskoeffizienten $\alpha$ von Luft}
+\begin{tabular}{rrrr}
+  \toprule
+  &Raumtemp. & Eis &kochendes Wasser\\
+  \midrule
+  h in cm&15,9&10,1&36,6\\
+  $\Delta h$ in cm&4,6&-1,2&25,3\\
+  Druck in Torr&793,8&765,8&1000,8\\
+  \bottomrule
+\end{tabular}
+\label{tab:addlabel}
+\end{table}
+
+Für den systematischen Fehler erhalten wir als Summe aus Ablesefehler $\pm 1$ mm, sowie für das Barometer insgesamt $\pm 3$ Torr. Außerdem bestimmen wir den systematischen Fehler aus der Raumtemperatur:
+\begin{align*}
+  T_{\mathrm{Raum}}&=\frac{273,15K\cdot p_{R}}{p_E}=294,68K\\
+  \Delta T_{sys}&=\left| \dpd{T_{\mathrm{Raum}}}{p_{R}}\right| \cdot \Delta p_{R}+ 
+  \left| \dpd{T_{\mathrm{Raum}}}{p_E} \right|\cdot
+  \Delta p_E=\SI{2,32}{\K}
+\end{align*}
+Außerdem wurde die Siedetemperatur mithilfe der Formel aus dem
+Versuchsraum zu $\theta_b =\SI{99,55}{\celsius}$ bestimmt, woraus sich
+für den systematischen Fehler ergibt:
+\begin{align*}
+\theta_b &=\left| \dpd{\theta_b}{b} \right| \cdot \Delta b \\
+&= \SI{0,037}{\celsius}  
+\end{align*}
+
+Nun kann zunächst der unkorrigierte Spannungskoeffizient bestimmt
+werden.
+\begin{align*}
+  \alpha_{\mathrm{unk}}&=\dfrac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \dfrac{1}{\theta_b}\\
+  &=3,62\cdot 10^{-3}\frac{1}{\si{\celsius}}\\
+  \Delta \alpha_{\mathrm{unk}}&=9,80\cdot 10^{-5} \dfrac{1}{\si{\celsius}}
+\end{align*}
+Um den Spannungskoeffizienten zu bestimmen muss nun noch das Schädliche Volumen bestimmt werden. Dieses setzt sich zusammen aus Kapillare $V_K=4,14\cdot 10^{-7}$ und Rezipient $V_R=9,20\cdot 10^{-5}$ Die systematischen Fehler ergeben sich wieder durch Größtfehlerabschätzung zu:\\
+\begin{align*}
+  \Delta V_K&= \left| \dpd{V_K}{l} \right| \Delta l + \left| \dpd{V_K}{r_K} \right|\cdot \Delta r_k \\
+  &= \SI{8,36e-7}{\m^3}\\
+  \Delta V_R&= \left| \dpd{V_R}{r} \right| \cdot \Delta r \\
+&= \SI{4,93e-5}{\m^3}
+\end{align*}
+Für $l$ wurde eine Ablesegenauigkeit von $\pm \SI{1}{\cm}$, für $r_K$ $\pm \SI{0,05}{\cm}$ und für $r$ $\pm \SI{0,5}{\cm}$ angenommen.\\
+Mit den Werten können wir nun den korrigierten Spannungskoeffizienten
+berechnen.
+\begin{align*}
+\alpha&=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}+\frac{p_K}{p_E}\left( \gamma+\frac{V_K}{V_R}\cdot \frac{1}{T}\right)\\
+&=3,66\cdot 10^{-3}K^{-1}\\
+\Delta \alpha_{sys}&=9,85\cdot 10^{-5} K^{-1}\\
+\Rightarrow \alpha&=\SI{3,66(10)e-3}{\K^{-3}}
+\end{align*}
+Der erhaltene Wert stimmt mit dem Literaturwert $\alpha_{Lit}=3,66\cdot 10^{-3} K^{-1}$ überein. Die Abweichungen hätten also gar nicht so groß angenommen werden müssen.\\
+Für den absoluten Nullpunkt ergibt sich $T_0=-\frac{1}{\alpha}=-(273,22\pm 7,67)K$, was wiederum mit dem Literaturwert zusammenfällt und zeigt, dass die Fehler sehr groß gewählt wurden.
+
+\section{Bestimmung des Adiabatenexponenten $\kappa = \dfrac{c_p}{c_v}$}
+\label{sec:bestimmung-adiabatenexponent}
+
+
+\subsection{Methode von Clément-Desormes}
+\label{sec:methode-von-clement}
+
+Der Versuch wird in folgenden Schritten (wie in der Vorbereitung) beschrieben, durchgeführt:
+\begin{enumerate}
+\item Erzeugung eines Überdrucks im Rezipienten (Blasebalg)
+\item Messung des Überdrucks im Rezipienten ($h_1$)
+\item Druckausgleich des Rezipienten mit der Umgebung durch kurzzeitige Öffnung des oberen Ventils (näherungsweise adiabatische Zustandsänderung).
+\item nach einer Übergangszeit von ca. 15 min erneute Messung des Drucks im Rezipienten ($h_2$).
+\end{enumerate}
+Nach der Beziehung aus der Vorbereitung ergibt sich der Adiabatenexponent dann zu
+\begin{align*}
+  \kappa = \dfrac{\Delta h_1}{\Delta h_2 - \Delta h_1}
+\end{align*}
+und der systematische Fehler durch Größtfehlerabschätzung zu: 
+\begin{align*}
+  \Delta \kappa &= \left| \dpd{\kappa}{\Delta h_1} \right| \cdot \Delta_{\mathrm{Err.}} h_1 + \left| \dpd{\kappa}{\Delta h_2} \right| \cdot \Delta_{\mathrm{Err.}} h_2 \\
+  &= \left| \dfrac{\Delta h_1 + \Delta h_2}{(\Delta h_1 - \Delta
+      h_2)^2} \right| \cdot (\Delta_{\mathrm{Err.}} h_1 +
+  \Delta_{\mathrm{Err.}}h_2)
+\end{align*}
+
+Folgende Werte werde in insgesamt 5 Messungen für $h_1$ und $h_2$ bestimmt; mit einer geschätzten Messungenauigkeit von $\Delta_{\mathrm{Err.}}h_1 = \Delta_{\mathrm{Err.}}h_2=\SI{2}{\mm}$ werden zudem $\kappa_i$ und $\Delta k_i,\quad i\in (1\dots 4)$ bestimmt.
+\begin{table}[!h]
+\caption{Messergebnisse (Adiabatenexponent nach Clément-Desormes)}
+\centering
+\begin{tabular}{cc|c}
+  \toprule
+  $\Delta h_1$ in $\si{\mm}$& $\Delta  h_2$ in $\si{\mm}$ & $\kappa_i$ \\
+  \midrule
+  90 & 22 & $1,324 \pm 0,097$ \\ 
+  93 & 23 & $1,329 \pm 0,095$ \\ 
+  106 & 25 & $1,309 \pm 0,080$ \\ 
+  148 & 35 & $1,310 \pm 0,057$ \\ 
+  \bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+Der Adiabatenexponent $\kappa$ wird aus Mittlung der $\kappa_i$ zu 
+\begin{align*}
+  \kappa = \dfrac{1}{7}\sum\limits_{i=1}^7 \kappa_i
+\end{align*}
+berechnet. Um den statistische Fehler zu bestimmen, wird mit Origin
+eine (lineare) Ausgleichsgerade durch die $\kappa_i$ gelegt. Der
+statistische Fehler $\sigma_{\kappa}$ ergibt sich dann als Fehler des
+y-Achsenabschnitts zu
+\begin{align*}
+  \sigma_{\kappa} = 0,009
+\end{align*}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.4]{Diagramme/2_1.eps}
+  \caption{Ermittlung des statistischen Fehler des Adiabatenexponenten}
+\end{figure}
+Damit folgt für den Adiabatenexponent
+\begin{align*}
+  \kappa = 1,318 \pm 0,082 \pm 0,009
+\end{align*}
+Der reale Wert $\kappa = 1,4$ liegt damit im angegebenen Fehlerbereich, der relative Fehler ergibt sich zu
+\begin{align*}
+  f = 5,88 \%
+\end{align*}
+
+\subsection{Vergleichsmessungen}
+\label{sec:vergleichsmessungen}
+
+Als Vergleichsmessung wurde der Versuch in \ref{sec:methode-von-clement} erneut durchgeführt, jedoch mit der Änderung, dass die Belüftungszeit im dritten Schritt wesentlich länger erfolgt (ca. $\SI{15}{\s}$ und der Druckausgleich somit nicht mehr als adiabatisch angenommen werden kann. \\
+\\
+Bei einer Messung ergeben sich analog folgende Werte für $\kappa$:
+\begin{table}[!h]
+\caption{Messergebnisse (Adiabatenexponent nach Clément-Desormes)}
+\centering
+\begin{tabular}{cc|c}
+  \toprule
+  $\Delta h_1$ in $\si{\mm}$& $\Delta  h_2$ in $\si{\mm}$ & $\kappa_i$ \\
+  \midrule
+  115 & 18 & $1,186 \pm 0,057$ \\ 
+  \bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+Die prozentuale Abweichung beträgt hier 
+\begin{align*}
+  f = 15,32 \%
+\end{align*}
+
+Durch diese große Abweichung wird deutlich, dass eine Verlängerung der Belüftungszeit das (genaue) Bestimmen des Adiabatenexponenten unmöglich macht.
+
+\subsection{Methode von Rüchard}
+\label{sec:methode-von-ruchard}
+
+Der Versuch wird wie in der Vorbereitung beschrieben durchgeführt. Eine große Schwierigkeit bei der Durchführung stellt jedoch die Reinigung und die senkrechte Ausrichtung des Präzisionsschwingrohrs da. Erst nach einigen Versuchen war es möglich die Kugel zum Schwingen zu bringen. \\
+\\
+Der Adiabatenexponent wird mit der Beziehung
+\begin{align}
+\label{eq:1}
+  \kappa = \left( \dfrac{2\pi}{T} \right)^2 \dfrac{m}{A^2} \dfrac{V}{p}
+\end{align}
+berechnet, welche in der Vorbereitung hergeleitet wurde. \\
+\\
+Folgende Größen wurden ermittelt
+\begin{align*}
+  m &= \SI{16,680(17)}{\g} \\
+  p &= p_0 + \dfrac{mg}{A} = \SI{997(1)}{\hecto\Pa} + \dfrac{\SI{16,680(17)}{\g}\cdot \SI{9,81}{\m\s^{-2}}}{\SI{2,01(25)}{\cm^2}} \\
+  &=  \SI{997(1)}{\hecto\Pa} + \SI{813,83(101)}{\Pa} = \SI{1005,14(201)}{\hecto\Pa}\\
+  A &= \pi \left( \dfrac{\SI{16(1)}{\mm}}{2} \right)^2 = \SI{2,01(25)}{\cm^2} \\
+  V_0 &= \SI{10,580(32)}{\l},
+\end{align*}
+wobei der systematische Fehler für die Querschnittsfläche $A$ aus 
+\begin{align*}
+  \Delta A = \left| \dpd{\left(\frac{1}{4}\pi d^2 \right)}{d} \right|\Delta d = \dfrac{1}{2}\pi d \Delta d
+\end{align*}
+bestimmt wurde. Für $p$ musste noch der Korrekturterm $\frac{gm}{A}$ (Kompression der Luft durch das Gewicht der Kugel) hinzu addiert werden.\\
+\\
+Der systematische Fehler ergibt sich aus
+\begin{align*}
+  \Delta \kappa &= \left| \dpd{\kappa}{T} \right| \cdot \Delta T +
+  \left| \dpd{\kappa}{m} \right| \cdot \Delta m + \left|
+    \dpd{\kappa}{V_0} \right| \cdot \Delta V_0 + \left|
+    \dpd{\kappa}{p} \right| \cdot \Delta p + \left| \dpd{\kappa}{A}
+  \right| \cdot \Delta A \\
+  &= \kappa \cdot \left( \dfrac{2}{T}\cdot\Delta T + \dfrac{1}{m}
+    \cdot\Delta m + \dfrac{1}{v_0} \cdot\Delta V_0 + \dfrac{1}{p}
+    \cdot\Delta p + \dfrac{2}{A} \cdot\Delta A \right)
+\end{align*}.
+
+Folgende Werte wurden für die Periodendauer der Schwingung gemessen:
+\begin{table}[!h]
+\caption{Periodendauer der Schwingung}
+\centering
+\begin{tabular}{ccc|c}
+\toprule
+$n$ & $t_{\mathrm{ges}}$ in $\si{\s}$ & $T$ in $\si{\s}$ & $\kappa_i$\\
+\midrule
+9,5 &  $10,77 \pm 0,5$ & $1,130 \pm 0,021$ & $1,335 \pm 0,390$ \\ 
+8,5 &  $9,77 \pm 0,5$ & $1,149\pm 0,024$  & $1,299 \pm 0,384$ \\ 
+10,0 & $11,13 \pm 0,5$ & $1,113\pm 0,02$  & $1,385 \pm 0,403$ \\ 
+10,0 & $10,99 \pm 0,5$ & $1,099\pm 0,02$  & $1,420 \pm 0,414$\\ 
+10,0 & $11,27 \pm 0,5$ & $1,127\pm 0,02$  & $1,351 \pm 0,392$\\ 
+10,0 & $10,99 \pm 0,5$ & $1,099\pm 0,02$  & $1,420 \pm 0,414$\\ 
+10,0 & $11,1 \pm 0,5$ & $1,110\pm 0,02$   & $1,392 \pm 0,405$\\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+\\
+
+Der Adiabatenexponent ergibt sich als Durchschnitt dieser Werte zu 
+\begin{align*}
+  \kappa = \dfrac{1}{7}\sum\limits_{i=1}^7 \kappa_i = 1,372 \pm 0,400
+\end{align*}
+
+Durch die errechneten Werten für $\kappa_i$ wurde mit Hilfe von Origin eine Regressionsgerade gelegt. Der statistische Fehler für $\kappa$ ergibt sich dann als Standardabweichung des y-Achsenabschnitts.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.4]{Diagramme/2_3.eps}
+  \caption{Ermittlung des statistischen Fehler des Adiabatenexponenten}
+\end{figure}
+
+Es ergibt sich 
+\begin{align*}
+  \sigma_{\kappa} = 0,03148
+\end{align*}
+
+Damit ergibt sich schließlich
+\begin{align*}
+  \kappa = 1,372 \pm 0,400 \pm 0,031
+\end{align*}
+
+Der reale Wert liegt bei $\kappa_{\mathrm{real}} = 1,4$. Dieser liegt in der angegebenen Fehlertoleranz und der relative Fehler ergibt sich damit zu 
+\begin{align*}
+  f = 2 \%.
+\end{align*}
+
+\section{Dampfdruckkurve von n-Hexan}
+\label{sec:dampfdr-von-wass-1}
+
+Wie in der Vorbereitung beschrieben, wird in diesem Versuchsteil die Dampfdruckkurve von n-Hexan aufgenommen. Als Raumtemperaturtemperatur wird $T_{\mathrm{Raum}} = \SI{22}{\celsius}$ gemessen, allerdings kann im Experiment weder $T = \SI{0}{\celsius}$ noch $T=\SI{22}{\celsius}$ für das n-Hexan erreicht werden, so dass die Temperatur im Intervall $T\in (\SI{3}{\celsius}\dots \SI{19}{\celsius})$ variiert wird. Nach jeder Temperaturerhöhung wird eine Weile gewartet, bis sich ein Gleichgewicht zwischen Flüssigkeits- und Gasphase des n-Hexans eingestellt hat. Der Druckunterschied zum Luftdruck ($p_{\mathrm{Luft}} = \SI{997}{\hecto\Pa}$) wird mithilfe eines Quecksilbermanometers bestimmt. \\
+\\
+Zuerst wird die Nulllage $h_0$ des Manometers durch 
+\begin{align*}
+  h_0 &= \dfrac{1}{2} \left( h_{\mathrm{links}} + h_{\mathrm{rechts}} \right)\\
+      &= \dfrac{1}{2} \left( \SI{44,82}{\cm} + \SI{34,54}{\cm} \right)\\
+      &= \SI{39,68}{\cm}
+\end{align*} 
+bestimmt, wobei $h_{\mathrm{links}}$ bzw. $h_{\mathrm{rechts}}$ die Quecksilberhöhen im rechten, bzw. linken Schenkel (ermittelt durch eine separate Messung) sind.\\
+\\
+Der Druck im Gefäß ergibt sich dann zu
+
+\begin{align}
+\label{eq:2}
+  p = p_{\mathrm{Luft}} + (h - h_{0}) \cdot \SI{133,32}{\Pa \per \mm}.
+\end{align}
+\\
+Für steigende und fallende Temperatur wurden folgende Höhen der Quecksilbersäule $h$ gemessen und aus (\ref{eq:2}) der jeweilige Druck $p_s$ errechnet. Es ergeben sich folgende Werte:
+
+\begin{table}[htbp]
+  \begin{minipage}[t]{0.48\linewidth}
+    \caption{Messergebnisse: Erwärmen}
+    \centering
+    \begin{tabular}{rrr}
+      \toprule
+      $T$ in $\si{\celsius}$ & $h$ in $\si{cm}$ & $p_s$ in $\si{\hecto\Pa}$ \\
+      \midrule
+      3 & 37,155 & 1030,66 \\ 
+      7 & 36,450 & 1040,06 \\ \
+      9 & 36,110 & 1044,60 \\ 
+      12 & 35,770 & 1049,13 \\ 
+      15 & 35,000 & 1059,39 \\ 
+      19 & 33,910 & 1073,93 \\
+      \bottomrule
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}[t]{0.48\linewidth}
+    \caption{Messergebnisse: Abkühlen}
+    \centering
+    \begin{tabular}{rrr}
+      \toprule
+      $T$ in $\si{\celsius}$ & $h$ in $\si{\cm}$ & $p_s$ in $\si{\hecto\Pa}$ \\
+      \midrule
+      19 & 33,910 & 1073,93 \\ 
+      16 & 34,355 & 1067,99 \\ 
+      13 & 35,200 & 1056,73 \\ 
+      10 & 35,550 & 1052,06 \\ 
+      7 & 36,135 & 1044,26 \\ 
+      5 & 36,520 & 1039,13 \\ 
+      4 & 36,760 & 1035,93 \\ 
+      \bottomrule
+    \end{tabular}
+  \end{minipage}
+\end{table}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{Diagramme/3_1.eps}
+  \caption{Dampfdruckkurve n-Hexan}
+\end{figure}
+
+Zur Bestimmung der Verdampfungswärme wird nun $\ln \left( \frac{p}{p_0} \right)$ über $\frac{1}{RT}$ aufgetragen. Die Wahl von $p_0$ ist für die (benötigte) Steigung unerheblich und wirkt sich nur auf den y-Achsenabschnitt einer Regressionsgeraden aus. Es wird $p_0 = \SI{997}{\hecto\Pa}$ (Luftdruck) gewählt) \\
+\\
+Dies wird durch die Beziehung
+\begin{align*}
+  \ln \left( \dfrac{p}{p_0} \right) = -\dfrac{H_v}{T\cdot R} +
+  \mathrm{const.}
+\end{align*}
+gerechtfertigt. 
+
+
+\end{document}

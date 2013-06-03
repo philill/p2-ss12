@@ -1,0 +1,318 @@
+\documentclass{scrartcl}
+% Damit die Verwendung der deutschen Sprache nicht ganz so umst\"andlich wird,
+% sollte man die folgenden Pakete einbinden: 
+\usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc} % das Trennen der Umlaute
+\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
+                     % die W\"orter werden anhand der neue Rechtschreibung 
+		     % automatisch getrennt.
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Polarisation und Doppelbrechnung}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+\parindent 0pt
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Polarisation}
+\label{sec:polarisation}
+
+\subsection{Lineare Polarisation}
+\label{sec:lineare-polarisation}
+
+\begin{table}[h!]
+\caption{Messergebnisse: lineare Polarisation mit polychromatischem Licht}
+\begin{tabular}{cr|cr|cr|cr}
+\toprule
+$\varphi$ in ° & $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ & $\varphi$ in °  &  $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ \\ 
+\midrule
+90 & 60,4 & 40 & 241,7 & -10 & 368,8 & -60 & 149,6 \\ 
+80 & 69,3 & 30 & 291,5 & -20 & 346,5 & -70 & 104,3 \\ 
+70 & 96,1 & 20 & 332,3 & -30 & 300,3 & -80 & 72,2 \\ 
+60 & 132,3 & 10 & 360,1 & -40 & 253,0 & -90 & 59,8 \\ 
+50 & 183,4 & 0 & 368,7 & -50 & 201,8 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[scale=0.4]{Diagramme/linear_ohne_bandpass.eps}
+\caption{Lineare Polarisation ohne Bandpass}
+\end{figure}
+
+\begin{table}[h!]
+\caption{Messergebnisse: lineare Polarisation mit monochromatischem Licht}
+\begin{tabular}{cr|cr|cr|cr}
+\toprule
+$\varphi$ in ° & $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ & $\varphi$ in °  &  $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ \\ 
+\midrule
+90 & 0,0 & 40 & 2,6 & -10 & 4,4 & -60 & 1,2 \\ 
+80 & 0,2 & 30 & 3,3 & -20 & 4,0 & -70 & 0,6 \\ 
+70 & 0,5 & 20 & 3,9 & -3  & 3,3 & -80 & 0,2 \\ 
+60 & 1,0 & 10 & 4,3 & -40 & 2,7 & -90 & 0,0 \\ 
+50 & 1,8 & 0  & 4,5 & -50 & 1,9 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[scale=0.4]{Diagramme/linear_mit_bandpass.eps}
+\caption{Lineare Polarisation mit Bandpass}
+\end{figure}
+ 
+\subsection{zirkulare Polarisation}
+\label{sec:zirk-polar}
+
+\begin{table}[h!]
+\caption{Messergebnisse: zirkulare Polarisation}
+\begin{tabular}{cr|cr|cr|cr}
+\toprule
+$\varphi$ in ° & $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ & $\varphi$ in °  &  $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ \\ 
+\midrule
+90 & 3,3 & 40 & 3,1 & -10 & 3,1 & -60 & 3,1 \\ 
+80 & 3,3 & 30 & 3,1 & -20 & 3,0 & -70 & 3,2 \\ 
+70 & 3,2 & 20 & 3,1 & -30 & 3,0 & -80 & 3,2 \\ 
+60 & 3,1 & 10 & 3,1 & -40 & 3,1 & -90 & 3,2 \\ 
+50 & 3,2 & 0 & 3,1 & -50 & 3,1 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[scale=0.4]{Diagramme/zirkular.eps}
+\caption{Zirkulare Polarisation}
+\end{figure}
+
+\subsection{elliptische Polarisation}
+\label{sec:ellipt-polar}
+
+\begin{table}[h!]
+\caption{Messergebnisse: elliptische Polarisation ($d=\SI{50}{\micro\m}$)}
+\begin{tabular}{cr|cr|cr|cr|cr}
+\toprule
+$\varphi$ in ° & $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ & $\varphi$ in °  &  $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$\\ 
+\midrule
+75 & 2,6 & 25 & 1,4 & -25 & 3,7 & -75 & 4,7 & \multicolumn{1}{r}{-125} & \multicolumn{1}{r}{1,5} \\ 
+65 & 2,0 & 15 & 1,6 & -35 & 4,4 & -85 & 4,2 & \multicolumn{1}{r}{-135} & \multicolumn{1}{r}{1,1} \\ 
+55 & 1,6 & 5 & 2,0 & -45 & 4,8 & -95 & 3,7 & \multicolumn{1}{r}{-145} & \multicolumn{1}{r}{1} \\ 
+45 & 1,4 & -5 & 2,6 & -55 & 5 & -105 & 3,0 &  &  \\ 
+35 & 1,3 & -15 & 3,3 & -65 & 4,9 & -115 & 2,1 &  &  \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[scale=0.4]{Diagramme/elliptisch_50.eps}
+\caption{Elliptische Polarisation ($d = \SI{50}{\micro\m}$)}
+\end{figure}
+
+\begin{table}[h!]
+\caption{Messergebnisse: elliptische Polarisation ($d=\SI{50}{\micro\m}$)}
+\begin{tabular}{cr|cr|cr|cr}
+\toprule
+$\varphi$ in ° & $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ & $\varphi$ in °  &  $U$ in $\si{\mV}$ & $\varphi$ in ° &  $U$ in $\si{\mV}$ \\ 
+\midrule
+120 & 0,6 & 70 & 6,0 & 20 & 8,9 & -30 & 2,4 \\ 
+110 & 1,0 & 60 & 7,4 & 10 & 7,9 & -40 & 1,3 \\ 
+100 & 1,7 & 50 & 8,5 & 0 & 6,8 & -50 & 0,7 \\ 
+90 & 3,1 & 40 & 9,1 & -10 & 5,2 & -60 & 0,6 \\ 
+80 & 4,5 & 30 & 9,2 & -20 & 3,8 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[scale=0.4]{Diagramme/elliptisch_60.eps}
+\caption{Elliptische Polarisation ($d = \SI{60}{\micro\m}$)}
+\end{figure}
+
+\section{Farbänderungen an Glimmerplättchen und 'Klebefilmbildern'}
+\label{sec:farb-an-glimm}
+
+In diesem Versuchsteil wurde folgende Versuchsanordnung gewählt, um die Bilder mit linear polarisiertem, weißen Licht an die Wand zu projizieren:  Leuchte - Polarisator ($\varphi = 0^\circ$ ) - Polarisator ($\varphi = 90^\circ$ ) - Glimmerplätchen/Klebebild - Linse - Schirm. Sowohl Glimmerplätchen, als auch Klebebild sind doppelbrechend und erzeugen folglich elliptisch polarisiertes Licht am Ausgang. Je nach Drehwinkel werden verschiedene Wellenlängen unterschiedlich stark durchgelassen, wodurch eine Farbverschiebung durch die Drehung sichtbar wird. 
+
+% "Katzenbilder"
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Katze_1.jpg}
+          \caption{$\varphi = 0^\circ$}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Katze_2.jpg}
+          \caption{$\varphi = 60^\circ$}
+        \end{subfigure}
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Katze_3.jpg}
+          \caption{$\varphi = 80^\circ$}
+        \end{subfigure}
+        \caption{Farbänderungen am Glimmerplättchen}
+\end{figure}
+
+
+% "Klebebild"
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Klebebild_1.jpg}
+          \caption{$\varphi = 0^\circ$}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Klebebild_2.jpg}
+          \caption{$\varphi = 60^\circ$}
+        \end{subfigure}
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Klebebild_3.jpg}
+          \caption{$\varphi = 80^\circ$}
+        \end{subfigure}
+        \caption{Farbänderungen am Klebebild}
+\end{figure}
+
+
+% "Klebebild"
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Klebebild_1.jpg}
+          \caption{$\varphi = 0^\circ$}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Klebebild_2.jpg}
+          \caption{$\varphi = 60^\circ$}
+        \end{subfigure}
+        \begin{subfigure}[!h]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Klebebild_3.jpg}
+          \caption{$\varphi = 80^\circ$}
+        \end{subfigure}
+        \caption{Farbänderungen am Klebebild}
+\end{figure}
+
+
+
+% Spannungsdoppelbrechungsbilder
+
+\section{Spannungsdoppelbrechung}
+\label{sec:spann}
+
+
+Der Aufbau wurde in diesem Versuch folgendermaßen gewählt: Leuchte - Polarisator ($\varphi = 0^\circ$ ) - Polarisator ($\varphi = 90^\circ$ ) - Profil - Linse - Schirm. Insgesamt wurden 5 Profile zuerst in unbelastetem Zustand und dann unter Druck dargestellt, wonach sich folgende Bilder ergeben. Der Unterschied in den Bildern lässt sich durch den druckabhängigen Brechungsindex erklären.
+
+
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_1_1.jpg}
+          \caption{unbelasted}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_1_2.jpg}
+          \caption{unter Druck}
+        \end{subfigure}
+        \caption{Spannungsdoppelbrechung: Profil 1}
+\end{figure}
+
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_2_1.jpg}
+          \caption{unbelasted}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_2_2.jpg}
+          \caption{unter Druck}
+        \end{subfigure}
+        \caption{Spannungsdoppelbrechung: Profil 2}
+\end{figure}
+
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_3_1.jpg}
+          \caption{unbelasted}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_3_2.jpg}
+          \caption{unter Druck}
+        \end{subfigure}
+        \caption{Spannungsdoppelbrechung: Profil 3}
+\end{figure}
+
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_4_1.jpg}
+          \caption{unbelasted}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_4_2.jpg}
+          \caption{unter Druck}
+        \end{subfigure}
+        \caption{Spannungsdoppelbrechung: Profil 4}
+\end{figure}
+
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_5_1.jpg}
+          \caption{unbelasted}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Druck_5_2.jpg}
+          \caption{unter Druck}
+        \end{subfigure}
+        \caption{Spannungsdoppelbrechung: Profil 5}
+\end{figure}
+
+
+
+\end{document}

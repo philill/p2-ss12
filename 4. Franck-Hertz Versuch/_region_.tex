@@ -1,0 +1,41 @@
+\message{ !name(Auswertung.tex)}\documentclass[ngerman]{scrartcl}
+% Damit die Verwendung der deutschen Sprache nicht ganz so umst\"andlich wird,
+% sollte man die folgenden Pakete einbinden: 
+\usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc} % das Trennen der Umlaute
+\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
+                     % die W\"orter werden anhand der neue Rechtschreibung 
+		     % automatisch getrennt.
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            separate-uncertainty = true,
+            multi-part-units=single
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{amsfonts}
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Franck-Hertz Versuch}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+\message{ !name(Auswertung.tex) !offset(71) }
+$ in $\si{\volt}$ & $U_2$ in $\si{\volt}$ & $U_3$ in $\si{\volt}$ & Kathodenspannung in $\si{\volt}$ \\ 
+\midrule
+
+\message{ !name(Auswertung.tex) !offset(139) }
+
+\end{document}

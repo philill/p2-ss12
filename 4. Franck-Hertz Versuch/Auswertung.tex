@@ -1,0 +1,185 @@
+\documentclass[ngerman]{scrartcl}
+\usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc} % das Trennen der Umlaute
+\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
+                     % die W\"orter werden anhand der neue Rechtschreibung 
+		     % automatisch getrennt.
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            separate-uncertainty = true,
+            multi-part-units=single
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{amsfonts}
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Franck-Hertz Versuch}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+\parindent 0pt
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Quecksilber-Franck-Hertz-Röhre}
+\label{sec:quecks-franck-hertz}
+
+
+
+\subsection{Aufbau der Schaltung}
+\label{sec:aufbau-der-schaltung}
+
+Die Schaltung wurde wie in der Versuchsbeschreibung angegeben aufgebaut. Die Funktionsweise wurde bereits in der Vorbereitung diskutiert.
+
+\subsection{Anregungsenergie und Kontaktspannung}
+\label{sec:anreg-und-kont}
+
+% Einfluss von Kathodenheizung, Spannung am Raumladungsgitter, Gegenspannung auf die Form der Franck Hertz-Kurve (qualitativ)
+
+Mit Hilfe eines Oszilloskops werden zunächst die Franck Hertz Kurve für die Temperaturen $T= \SI{170}{\celsius}, \SI{160}{\celsius}, \SI{150}{\celsius}, \SI{140}{\celsius}, \SI{120}{\celsius}$ aufgenommen. 
+
+Die Betriebsparameter werden jeweils so eingestellt, dass die charakteristische Form der Franck-Hertz-Kurve gut sichtbar ist. Gemessen wird jeweils die Auffägerspannung $U_A$ in Abhängigkeit der Beschleunigungsspannung $U_1$. 
+
+\begin{table}[htbp]
+\centering
+\caption{}
+\begin{tabular}{rrrrr}
+\toprule
+T in $\si{\celsius}$ & $U_1$ in $\si{\volt}$ & $U_2$ in $\si{\volt}$ & $U_3$ in $\si{\volt}$ & Kathodenspannung in $\si{\volt}$ \\ 
+\midrule
+170 & 5,26 & 19,00 & 0,51 & 6,4 \\ 
+160 & 4,75 & 19,00 & 0,45 & 6,4 \\ 
+150 & 3,70 & 19,00 & 0,95 & 6,4 \\ 
+140 & 2,44 & 19,00 & 0,71 & 6,4 \\ 
+120 & 5,01 & 19,00 & 2,54 & 4,9 \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+% Diskussion des Zustandekommens der typischen Franck-Hertz Kurve
+
+
+
+% Berechnung:
+% Anregungsenergie (niedrigste Anregung)
+
+Wie in der Vorbereitung gezeigt tritt bei den vorliegenden Versuchsparametern nur eine Anregung in den ersten angeregten Zustand auf, so dass der Abstands zweier Peaks der Beschleunigungsspannung die \textbf{Anregungsenergie} (in $\si{\eV}$) angibt.  Mittelt man nun bei verschiedenen Temperaturen über alles Peakabstände, so erhält man  
+\begin{align*}
+  E = e\cdot \bar{\Delta U} = \SI{5,28}{\eV}.
+\end{align*}
+
+% Kontaktspannung zwischen Kathode und Anode
+Die \textbf{Kontaktspannung} lässt sich mit der Beziehung
+\begin{align*}
+  U_K = n\cdot \overline{\Delta U} - U_1 - U_{2,n} 
+\end{align*}
+berechnen, wobei $\overline{\Delta U}$ die mittlere Spannung zwischen zwei Peaks, $U_{2,n}$ die Beschleunigungsspannung am $n$-ten Peak und $U_1$ die Spannung am Hilfsgitter ist. Beachtet werden musste, dass der erste Peak außer bei $T=\SI{120}{\celsius}$ nicht beobachtet werden konnte, so dass dort der erste gemessene dem zweiten auftretenden Peak entspricht. 
+
+Es ergeben sich folgende Thermokontaktspannungen für die unterschiedlichen Temperaturen:
+\begin{table}[htbp]
+\centering
+\caption{Thermokontaktspannungen bei verschiedenen Temperaturen}
+\begin{tabular}{rrrrr}
+\toprule
+T in $\si{\celsius}$ & $U_\mathrm{Th.}$  \\ 
+\midrule
+170 & -2,15 \\ 
+160 & -1,41 \\ 
+150 & -1,91 \\ 
+140 & -1,27 \\ 
+120 & -3,08 \\  
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+Da die Thermokotaktspannung temperaturabhängig ist, wurde auf auf die Bildung des Mittelwertes verzichtet und nachfolgende jeweils um die Thermokontaktspannung der entsprechenden Temperatur korrigiert. 
+
+
+\subsection{Anodenstromkurve}
+\label{sec:anodenstromkurve}
+
+Für die Aufnahme der Anodenstromkurve wird die Temperatur gemäß Aufgabenstellung auf $T = \SI{150}{\celsius}$ eingestellt. Nun wird der Anodenstrom $I_A$ in Abhängigkeit der Beschleunigungsspannung $U_2$ gemessen. 
+
+Die Messwerte sind in Tabelle \ref{table:anodenstromkurve} angegeben. 
+
+\begin{table}[htbp]
+\centering
+\caption{Messerte: Bestimmung der Anodenstromkurve}
+\begin{tabular}{rr|rr}
+\toprule
+U in V & I in $\si{\micro\ampere}$ & U in V & I in $\si{\micro\ampere}$ \\ 
+\midrule
+0,0 & 0,00 & 16,0 & 0,41 \\ 
+2,1 & 0,05 & 18,1 & 0,47 \\ 
+4,1 & 0,10 & 19,9 & 0,54 \\ 
+6,0 & 0,14 & 21,9 & 0,66 \\ 
+7,9 & 0,18 & 24,1 & 0,80 \\ 
+10,2 & 0,25 & 26,2 & 0,94 \\ 
+12,1 & 0,30 & 27,5 & 1,07 \\ 
+14,0 & 0,35 & 30,4 & 1,44 \\ 
+\bottomrule
+\end{tabular}
+\label{table:anodenstromkurve}
+\end{table}
+
+% Anodenstrom - Thermokontaktspannung
+\begin{figure}
+  \centering
+  \caption{Anodenstromkurve bei $T = \SI{150}{\celsius}$}
+  \input{Diagramme/anodenstromkurve.tex}
+\end{figure}
+
+Zur Überprüfung der Beziehung
+\begin{align*}
+  I_A = \lambda U_2^{\dfrac{3}{2}}
+\end{align*}
+wird $\ln(I_A$ gegen $\ln(U_2$ abgetragen. Legt man nun eine Regressionsgerade durch diese Punkte, so entspricht deren Steigung gerade dem gesuchten Exponenten. Der ermittelte Wert
+\begin{align*}
+  m = 1,20228
+\end{align*}
+weicht jedoch relativ stark von $m = 1,5$ ab und der relative Fehler beträgt 19,8\%.
+ 
+\begin{figure}
+  \centering
+  \caption{logarithmische Anodenstromkuve zur Bestimmung von $m$}
+  \input{Diagramme/anodenstromkurve-logarithmisch.tex}
+\end{figure}
+
+
+\subsection{Ionisierungsarbeit von Quecksilber}
+\label{sec:ionis-von-quecks}
+
+In diesem Versuchsteil wird das Gitter $G_1$ als Beschleunigungsgitter genutzt. Hierbei liegt $G_1$ auf dem selben Potential wie $G_2$. Als Temperatur wird $T = \SI{120}{\celsius}$ gewählt, wobei die Betriebsparameter entsprechend 1.2 eingestellt werden. 
+
+Zunächst wird der Anodenstrom gegen die Beschleunigungsspannung (korrigiert um Thermokontaktspannung) aufgetragen.
+
+
+Im Diagramm erkennt man einen typischen Knick, dessen Spannungswert der Ionisierungsarbeit in $\si{\eV}$ entspricht. Legt man durch die Punkte vor und nach dem Knick eine Regressionsgerade und bestimmt deren Schnittpunkt, so erhält man
+\begin{align*}
+  E_{\mathrm{Ion.}} = \SI{}{\eV}
+\end{align*}
+Verglichen mit dem Literaturwert von $E_{\mathrm{Ion.}} = \SI{10,44}{\eV}$ ergibt sich eine relative Abweichung von \%.
+
+Nun wird der Auffängerstrom gegen die Beschleunigungsspannung aufgetragen und mittels Oszilloskop (\textit{Picoscope}) die Position der Spannungsspitze ermittelt. Diese liegt bei $U_2 = \SI{13,38}{\volt}$. Korrigiert man um die Thermokontaktspannung, so erhält man $U = \SI{}{\volt}$, bzw. 
+\begin{align*}
+  E_{\mathrm{Ion.}} = \SI{}{\eV}
+\end{align*}
+
+\end{document}

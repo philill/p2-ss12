@@ -1,0 +1,25 @@
+\documentclass{scrartcl}
+% Damit die Verwendung der deutschen Sprache nicht ganz so umst\"andlich wird,
+% sollte man die folgenden Pakete einbinden: 
+\usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc} % das Trennen der Umlaute
+\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
+                     % die W\"orter werden anhand der neue Rechtschreibung 
+		     % automatisch getrennt.
+\usepackage{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+
+
+\title{Titel}
+\subtitle{Subtitel}
+\author{Simon Fromme}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\end{document}

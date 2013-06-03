@@ -1,0 +1,698 @@
+\documentclass{scrartcl}
+% Damit die Verwendung der deutschen Sprache nicht ganz so umst\"andlich wird,
+% sollte man die folgenden Pakete einbinden: 
+\usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc} % das Trennen der Umlaute
+\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
+                     % die W\"orter werden anhand der neue Rechtschreibung 
+		     % automatisch getrennt.
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Absorption radioaktiver Strahlung}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+\parindent 0pt
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Geiger-Müller-Zählrohr Eigenschaften}
+\label{sec:geig-mull-zahlr}
+
+\subsection{Einsatzspannung und Plateau-Anstieg des Zählrohrs}
+\label{sec:einsatzspannung}
+
+Zur Aufnahme der Zählrohr-Kennlinie wird ein Sr-90/Y-90-Betapräparat in konstantem Abstand zum Zählrohr fixiert. Bei veränderten Werten der Zählrohrspannung $U$ wird jeweils die Zählrate am Zählrohr aufgenommen. Die Intervallzeit wird zu $\Delta t = \SI{1,2}{s}$, die Laufzeit zu $T = \SI{120}{s}$ gewählt. Im Messintervall von $U \in (\SI{52,64}{\volt}~...~ \SI{519,06}{\volt})$ werden insgesamt 31 Messreihen aufgenommen. \\
+\\
+Die Mittelwerte für die gemessene Zählrohrspannung und Zählrate jeder Messreihe sind folgender Tabelle zu entnehmen:
+
+% Zählrohr-Kennlinie (Messergebnisse)
+\begin{table}[htbp]
+  \centering
+  \caption{Messergebnisse: Einsatzspannung und Plateau-Anstieg des Zählrohrs}
+  \begin{tabular}{crr|crr|crr}
+    \toprule
+Messreihe & $\bar{U}$ in V & $\bar{n}$ & Messreihe & $\bar{U}$ in V & $\bar{n}$ & Messreihe & $\bar{U}$ in V & $\bar{n}$ \\ 
+    \midrule
+1 & 52,64 & 0,00 & 12 & 314,10 & 259,40 & 22 & 394,99 & 270,56 \\ 
+2 & 100,46 & 0,00 & 13 & 321,32 & 262,64 & 23 & 404,75 & 278,20 \\ 
+3 & 150,30 & 0,00 & 14 & 329,24 & 262,52 & 24 & 417,18 & 282,50 \\
+4 & 199,72 & 0,00 & 15 & 341,62 & 266,48 & 25 & 440,03 & 276,10 \\
+5 & 249,48 & 0,00 & 16 & 348,94 & 263,60 & 26 & 450,48 & 268,10 \\
+6 & 278,40 & 0,00 & 17 & 362,90 & 270,00 & 27 & 450,53 & 275,60 \\
+7 & 290,94 & 0,00 & 18 & 374,34 & 272,40 & 28 & 461,31 & 275,10 \\
+8 & 294,72 & 0,00 & 19 & 374,92 & 273,52 & 29 & 491,18 & 282,69 \\
+9 & 299,32 & 0,00 & 20 & 374,64 & 274,51 & 30 & 507,46 & 277,65 \\ 
+10 & 291,48 & 192,64 & 21 & 382,04 & 275,75 & 31 & 519,06 & 282,40 \\ 
+11 & 309,06 & 251,56 & & & & \\
+\bottomrule
+
+\end{tabular}
+\label{}
+\end{table}
+
+Trägt man die Zählrate $n$ gegen die Einsatzspannung $U$ in einem Diagramm ab, erkennt man gut den Plateaubereich, in welchem sich $n$ in Abhängigkeit von $U$ kaum ändert. Um den Plateu-Anstieg zu bestimmen, wird durch diese Punkte eine Regressionsgerade gelegt.
+
+% Zählrohr-Kennlinie (Grafik)
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Diagramme/1_1.eps}
+	\caption{Zählrohr-Kennlinie}
+\end{figure}
+
+
+Die Gleichung der Regressionsgerade durch die Punkte im Plateaubereich (Messpunkte 12-31) wird  mit Hilfe von OriginPro 8.6G zu
+\[ n = 0,10277 \cdot U + 230,52553 \]
+bestimmt. Der Standardfehler der Steigung beträgt $\sigma_c = 0,01758$, der Standardfehler des Y-Achsenabschnitts $\sigma_Y = 7,09161$. Hierbei wird jedoch vernachlässigt, dass die Datenpunkte für die Regression (Mittelwerte der einzelnen Messreihen) bereits fehlerbehaftet sind. \\
+\\
+Für den Arbeitspunkt des Zählrohrs empfiehlt es sich, einen Punkt in der Mitte des Plateaubereichs zu wählen. Als guter empirischer Wert hat sich $U_A = U_1 + \SI{50}{\volt}$ herausgestellt, wobei $U_1$ die Einsatzspannung (ermittelt $U_1 \approx \SI{301}{\volt}$) ist. In Absprache mit der Praktikumsbetreuerin wird für alle nachfolgenden Versuche die etwas höhere Arbeitsspannung 
+\[ U_A = \SI{400}{\volt}\]
+festgelegt.
+
+\subsection{Untergrundrate (Nulleffekt)}
+\label{sec:untergr-null}
+
+Für die Bestimmung des Nulleffekts werden alle radioaktiven Quellen vom Zählrohr entfernt (Bleiburg). Insgesamt 160 mal wird die Zählrate in Intervallen von jeweils $\Delta t = \SI{5}{\s}$ gemessen, wobei sich folgende Häufigkeitsverteilung ergibt:
+
+% Nullrate Diagramm
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{Diagramme/1_3.eps}
+	\caption{Verteilung der Zählraten nach Entfernung aller Strahlungsquellen}
+\end{figure}
+Dabei ergibt sich der Mittelwert der Zählrate zu
+\[ \bar{n_{NE}} = \SI{0,3125}{\s^{-1}} \]
+und die Standardabweichung zu
+\[ s_{NE} =  \SI{0,5162}{\s^{-1}}\]
+
+\subsection{Totzeit des Zählrohrs nach der Zwei-Präparate-Methode}
+\label{sec:totz-des-zahlr}
+
+Zur Bestimmung der Totzeit des Zählrohrs wird in einem Zeitintervall von $T = \SI{120}{\s}$ die Anzahl der Ereignisse $N_i$ für folgende  Proben bestimmt:
+
+% Stimmt das?!
+\begin{enumerate}
+\item Sr-90/Y-90 (18 Bq) und Sr-90/Y-90 (37 Bq)
+\item Sr-90/Y-90 (37 Bq)
+\item Sr-90/Y-90 (18 Bq)
+\end{enumerate}
+ 
+% Zählrohr-Kennlinie (Messergebnisse)
+\begin{table}[htbp]
+  \centering
+  \caption{Messergebnisse: Totzeit des Zählrohrs}
+  \begin{tabular}{rrr}
+    \toprule
+Probe Nr. & Ereignisanzahl N \\ 
+    \midrule
+1 & 26774 \\ 
+2 & 23863 \\ 
+3 & 16627 \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+Aus der Beziehung (siehe Vorbereitung)
+\begin{align*} 
+   \tau = \dfrac{T}{N_{12}}\cdot \left( 1-\sqrt{1-\dfrac{(N_1+N_2-N_{12})\cdot N_{12}}{N_1\cdot N_2}} \right) 
+\end{align*} 
+folgt für die Totzeit
+\[ \tau = \SI{3,259}{\milli\s}  \]
+\\
+\\
+In den folgenden Aufgaben wird nun die gemessene Zählrate $n'$ jeweils um Totzeit des Zählrohrs $\tau$ und die Nullrate $n_{NE}$ korrigiert. Es gilt dann für die (wahre) Zählrate
+\[ n = \dfrac{n'}{1-\tau \cdot n'} - n_{NE}  \]
+bzw.
+\[ n =  \dfrac{n'}{1-\SI{3,259}{\milli\s} \cdot n'} -  \SI{0,3125}{\s^{-1}} \]
+\subsection{Gültigkeit des Abstandgesetzes}
+\label{sec:uberpruefung-abstandsgesetz}
+
+Zur Überprüfung des Abstandsgesetzes ($n = k\cdot R^{-2}$, mit einer Konstante $k$) wird im Abstand (Der gemessene Abstand zwischen Vorderkante Präparat und Vorderkante Zählrohr wurde noch um die Entfernung Präparat - Vorderkante Zählrohr $d = \SI{4}{\mm}$ korrigiert) $R$ der Quelle vom Zählrohr jeweils 100 mal die Zählrate für $\Delta t = \SI{2}{\s}$ gemessen. Im Bereich von $R \in (\SI{3,4}{\mm}~...~\SI{15,4}{\mm})$ wird nun der Abstand $R$ variiert und aus der jeweiligen Messreihe der Mittelwert und die Standardabweichung der Zählrate berechnet.\\
+\\
+Die (bereits korrigierten) Messwerte sind in Tabelle \ref{table:abstandsgesetz} dargestellt.
+% Überprüfung Abstandsgesetz (Messergebnisse)
+\begin{table}[!h]
+  \centering
+  \caption{(korrigierte) Messergebnisse: Überprüfung Abstandsgesetz}
+  \begin{tabular}{rrr}
+    \toprule
+R in $\si{\cm}$ &$\bar{n}$ in $\si{s^{-1}}$ & $s_n$ in $\si{s^{-1}}$ \\ 
+\midrule
+3,4 & 16,03 & 5,03 \\ 
+4,4 & 9,93 & 2,83 \\ 
+5,4 & 6,87 & 2,27 \\ 
+6,4 & 5,03 & 2,52 \\ 
+7,4 & 4,36 & 2,35 \\ 
+8,4 & 3,03 & 2,05 \\ 
+9,4 & 2,73 & 1,64 \\ 
+10,4 & 2,32 & 1,43 \\ 
+15,4 & 1,31 & 1,15 \\ 
+\end{tabular}
+\label{table:abstandsgesetz}
+\end{table}
+\\
+Trägt man diese Werte in einem doppellogarithmischen Graphen auf, so kann man einen linearen Zusammenhang erkennen.
+\\
+% Abstandsgesetz - Mittelwert (Grafik)
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{Diagramme/1_4_1.eps}
+          \caption{Abstand - mittlere Zählrate}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{Diagramme/1_4_2.eps}
+          \caption{Abstand - Standardabweichung Zählrate}
+        \end{subfigure}
+        \caption{Überprüfung Abstandsgesetz}
+\end{figure}
+
+Legt man eine Regressionsgerade der Form $y = m \cdot x + c$ durch beide Messreihen, so erhält man:
+\begin{itemize}
+\item \textbf{Abstand $R$ - Mittelwert $\bar{n}$: } 
+\[ m_1 = -1,85749 \quad c_1 = 5,05672 \]
+\item \textbf{Abstand $R$ - Standardabweichung $s_n$: } 
+\[ m_2 = -0,9469 \quad c_2 = 2,67826 \]
+\end{itemize}
+
+Aus der Gleichung der Regressiongerade 
+\begin{align*}
+  \ln(y) = m \cdot \ln(x) + c \Rightarrow y = e^{m \cdot \ln(x) + c} \Rightarrow y = e^c\cdot x^m  
+\end{align*}
+erhält man dann folgende Schätzungen für die funktionale Abhängigkeit von $\bar{n}$ bzw. $s_n$ von $R$:
+\begin{itemize}
+\item \textbf{Abstand $R$ - Mittelwert $\bar{n}$: }
+  \[ \bar{n} =  157.07 \cdot R^{-1,85749} \]
+\item \textbf{Abstand $R$ - Standardabweichung $s_n$: } 
+  \[ s_n = 14.56 \cdot R^{-0,9469}  \]
+\end{itemize}
+Dies stimmt ungefähr mit dem Abstandsgesetz überein, auch wenn ein relativ großer Fehler im Exponenten auftritt.
+
+Dieser könnte u.a. durch die Absorption eines Teils der Gammastrahlung durch die Luftmoleküle verursacht sein.
+
+\section{$\alpha$-Absorption}
+\label{sec:alpha-absorption}
+
+Dieser Versuchsteile wird aus Zeitgründen von der Praktikumsgruppe 38 (Carl Degitz, Fabio Bertucco) durchgeführt. Als Präparat wird Am-241 verwendet. Da mit einem anderen Zählrohr gemessen wurde, müssen zunächst Totzeit und Nullrate neu bestimmt werden.
+
+\subsection{Totzeit}
+\label{sec:totzeit}
+
+Mit der bekannten Beziehung wird die Totzeit zu
+\[ \tau = \SI{0,037}{\ms}\]
+bestimmt.
+
+\begin{table}[!h]
+  \centering
+  \caption{Messergebnisse: Totzeit des Zählrohrs (Praktikumsgruppe 38)}
+  \begin{tabular}{rrr}
+    \toprule
+Probe & Ereignisanzahl N \\ 
+    \midrule
+1 & 30898 \\ 
+2 & 22775 \\ 
+3 & 8239  \\ 
+\bottomrule
+\end{tabular}
+\label{}
+\end{table}
+
+\subsection{Nulleffekt}
+\label{sec:nulleffekt}
+
+Nach die Messungen zur Bestimmung des Nulleffekts ergibt sich die Häufigkeitsverteilung aus Tabelle \ref{table:alpha-nulleffekt}
+
+\begin{table}[!h]
+  \centering
+  \caption{Messergebnisse: Nulleffekt des Zählrohrs (Praktikumsgruppe 38)}
+  \begin{tabular}{rrr}
+    \toprule
+    Zählrate $n$ &  Ereignisse \\ 
+    \midrule
+    0 & 122 \\ 
+    1 & 31 \\ 
+    2 & 8  \\ 
+    \bottomrule
+\end{tabular}
+\label{table:alpha-nulleffekt}
+\end{table}
+
+Daraus ergibt sich die Nullrate als Mittelwert der Zählrate ohne Strahlungsquellen zu
+\[ \bar{n_{NE}} = \SI{0,2919}{\s^{-1}} \]
+
+\subsection{Korrektur Gammastrahlung}
+\label{sec:korr-gamm}
+
+Da am Präparat sowohl Alpha-, als auch Gammastrahlung abgestrahlt wird, müssen die Messwerte um die Zählrate der Gammastrahlung korrigiert werden. Hierzu werden zusätzlich neun Messreihen ($T = \SI{60}{s}$, $\Delta t = \SI{1,2}{s}$) aufgenommen, wobei das Präparat durch eine Kappe verdeckt wird. Durch diese Maßnahme wird dort alle Alphastrahlung absorbiert, so dass nur Gamma-Strahlung am Detektor gemessen wird. \\
+\\
+Die Absorption von Gammastrahlung durch Luft ist sehr gering. Deswegen wird angenommen, dass der Beitrag der Gammastrahlung $n_\gamma$ zur gemessenen Zählrate nicht vom Abstand $R$ abhängt. Deswegen wird zur $n_{\gamma}$ durch den Mittelwert der gemessenen (um Totzeit und Nulleffekt korrigierten) Zählraten $n_i\quad i\in \{1~...~9\}$ abgeschätzt.\\
+\\
+Mit der Korrektur um Totzeit, Nulleffekt und Gammastrahlung wird die (wahre) Zählrate $n$ der Alphastrahlung durch das Zählrohr im Abstand $R$ von der Quelle zu
+\begin{align*}
+  n = \dfrac{n'}{1-\tau\cdot n'} - n_{NE} - n_{\gamma}
+\end{align*}
+berechnet.
+
+\subsection{Raumwinkelkorrektur}
+\label{sec:raumwinkelkorrektur}
+
+Unter der Annahme, dass die Strahlung vom Präparat gleichmäßig in den ganzen Raumwinkel $4\pi$ abgestrahlt wird, misst man durch den Versuchsaufbau in größerer Entfernung (auch im Vakuum) immer nur den Anteil der Strahlung, der dem Verhältnis der Zählrohrfensterfläche zu einer gedachten Kugel mit Radius $R$ um die Probe entspricht. \\
+\\
+Um die gesamte Zählrate zu berechnen, die im Abstand $R$ vom Präparat (Annahme: Präparat punktförmig) auftritt, muss folglich noch zusätzlich um den Faktor
+\[ k_{RW} = \dfrac{4\pi R^2}{A_{Fenster}} = \dfrac{4R^2}{r^2}\]
+korrigiert werden, wobei $r = \SI{4,5}{\mm}$ der Radius des Zählrohrfensters ist. \\
+\\
+Berücksichtigt man alle Effekte, muss die am Zählrohr gemessene Zählrate $n'$ also auf
+\begin{align*}
+   n &= \dfrac{4R^2}{r^2} \left( \dfrac{n'}{1-\tau\cdot n'} - n_{NE} - n_{\gamma} \right) \\
+     &= \dfrac{4R^2}{(\SI{4,5}{\mm})^2} \left( \dfrac{n'}{1-\SI{3,7e-5}{s}\cdot n'} - \SI{0,2919}{\s^{-1}} - \SI{0,5437}{\s^{-1}} \right)
+\end{align*}
+korrigiert werden.\\
+Da die Fensterfläche des Zählrohrs eben und nicht gekrümmt ist und dadurch die Heliumkerne in der Mitte dieser Fläche einen geringeren Weg, als die am Rand zurückgelegt haben, ist die Korrektur nicht ganz genau. Wird $r$ im Vergleich zu $R$ groß, tritt ein größerer Korrekturfehler auf, der hier vernachlässigt wurde.
+
+\subsection{Absorptionskurve}
+\label{sec:absorbtionskurve}
+
+Korrigiert man die gemessene Entfernung $R'$ von Präparat zu Zählrohr noch um den Abstand Präparat - Quellenrand $d_1 = \SI{7}{\mm}$ und um den Materialeinfluss des Zählrohrfensters (entspricht $d_2 = \SI{1}{\mm}$ Luftweg) so erhält man 
+\begin{align*}
+  R &= R' + d_1 + d_2 \\
+    &= R' +  \SI{7}{\mm} +  \SI{1}{\mm}
+\end{align*}
+
+Die Raumwinkelkorrektur ist jedoch nur mit 
+\begin{align*}
+    R_{RW} &= R' + d_1 \\
+    &= R' +  \SI{7}{\mm}
+\end{align*}
+durchzuführen, da hier nur der geometrische Abstand von der Strahlungsquelle entscheidend ist.\\
+\\
+Insgesamt erhält man die (korrigierten) Messwerte aus Tabelle \ref{table:absorbtionskurve-alpha}.\\
+\\
+\begin{table}[!h]
+\caption{Absorption der $\alpha$-Strahlung von Am-241 in Luft}
+\begin{tabular}{rrrrrr}
+\toprule
+\multicolumn{1}{l}{} & \multicolumn{ 5}{c}{Zählrate $n$ in $\si{s^{-1}}$} \\ 
+\multicolumn{1}{l}{$R$ in mm} & \multicolumn{1}{l}{ohne Korr.} & \multicolumn{1}{l}{Totzeitkorr.} & \multicolumn{1}{l}{Nulleffektkorr.} & \multicolumn{1}{l}{Gammakorr.} & \multicolumn{1}{l}{Raumwinkelkorr.} \\ 
+\midrule
+9 & 191,88 & 193,25 & 192,96 & 192,42 & 2432,52 \\ 
+10 & 186,50 & 187,80 & 187,50 & 186,96 & 2991,36 \\ 
+11 & 159,28 & 160,22 & 159,93 & 159,39 & 3148,42 \\ 
+12 & 136,74 & 137,44 & 137,14 & 136,60 & 3264,90 \\ 
+13 & 115,42 & 115,92 & 115,62 & 115,08 & 3273,37 \\ 
+14 & 101,98 & 102,37 & 102,07 & 101,53 & 3389,37 \\ 
+15 & 89,54 & 89,84 & 89,55 & 89,00 & 3445,81 \\ 
+16 & 84,06 & 84,32 & 84,03 & 83,49 & 3710,52 \\ 
+17 & 71,02 & 71,21 & 70,92 & 70,37 & 3558,54 \\ 
+18 & 62,59 & 62,73 & 62,44 & 61,90 & 3533,53 \\ 
+19 & 56,14 & 56,26 & 55,96 & 55,42 & 3546,96 \\ 
+20 & 50,14 & 50,23 & 49,94 & 49,40 & 3522,48 \\ 
+21 & 47,22 & 47,30 & 47,01 & 46,47 & 3671,47 \\ 
+22 & 41,94 & 42,01 & 41,71 & 41,17 & 3586,33 \\ 
+23 & 37,20 & 37,25 & 36,96 & 36,42 & 3481,52 \\ 
+24 & 33,50 & 33,54 & 33,25 & 32,71 & 3417,57 \\ 
+25 & 15,82 & 15,83 & 15,54 & 14,99 & 1705,95 \\ 
+26 & 4,14  & 4,14  & 3,85  & 3,30  & 407,69 \\ 
+27 & 0,94  & 0,94  & 0,65  & 0,10  & 13,95 \\ 
+28 & 0,82  & 0,82  & 0,53  & -0,02 & -2,24 \\ 
+33 & 0,48  & 0,48  & 0,19  & -0,36 & -71,92 \\ 
+38 & 0,48  & 0,48  & 0,19  & -0,36 & -96,15 \\ 
+\bottomrule
+\end{tabular}
+\label{table:absorbtionskurve-alpha}
+\end{table}
+\\
+Da der tatsächlich auftretende Nulleffekt und die ermittelte Zählrate der Gamma-Strahlung um den jeweiligen Mittelwert streut, kann es durch die Korrektur bei geringen Zählraten zu negativen Werten kommen). Diese liegen aber in der statistischen Schwankungsbreite der beiden Korrektur Terme.\\
+\\
+Trägt man $n$ gegen $R$ ab, so ergibt sich die Absorptionskurve von Am-241. 
+% Zählrohr-Kennlinie (Grafik)
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{Diagramme/2_1.eps}
+	\caption{Absorptionskurve Am-241}
+\end{figure}
+
+Auffällig ist, dass die Zählrate bei $R = \SI{24}{\mm}$ relativ abrupt abfällt. Das lässt sich dadurch erklären, dass  Am-241 $\alpha$-Strahlung nur in der diskreten Energie $E = \SI{5,5}{MeV}$ abstrahlt. Dies ist bei Ra-226 anders, wo $\alpha$-Strahlung bei mehreren diskreten Energien auftritt und der Sprung deswegen weniger abrupt ist. Dass die Kurve zunächst ansteigt ist theoretisch verwunderlich, lässt sich aber durch die fehlerhafte Raumwinkelkorrektur erklären. Für kleine $R$ macht sich die Tatsache bemerkbar, dass das Zählrohrfenster in Wirklichkeit nicht eben ist. 
+
+
+\section{$\beta$-Absorption}
+\label{sec:beta-absorbtion}
+
+Dieser Versuchsteile wird aus Zeitgründen von der Praktikumsgruppe 12 (Marie Weiel, Woo-Jeong Baek) durchgeführt. Die Totzeit und der Nulleffekt (Verwendung von anderem Zählrohr) werden von dieser Gruppe zu 
+\[ \tau = \SI{4,013}{\ms} \]
+und
+\[ n_{NE} = \SI{0,38}{\s^{-1}} \]
+bestimmt. 
+
+\subsection{Absorptionskurve}
+\label{sec:absorbtionskurve-2}
+
+Der Versuch wird wie in der Vorbereitung beschrieben durchgeführt. Bei jeweils gleicher Geometrie Strahler-Absorber-Blende-Zählrohr wird die Absorberdicke im Intervall von $d' \in (0~...~\SI{1990}{\micro\m})$ variiert und jeweils die Anzahl der Ereignisse am Zählrohr $N$ gemessen. Die Messung erfolgt jeweils in einer Zeitspanne $T_{\text{max}} = \SI{300}{\s}$ bzw. bis $N$ die Grenze $N_{\text{max}} = 10000$ überschreitet.\\
+\\
+Da beim Beta-Zerfall von Sr-90/Yi-90 keine Gamma-Strahlung emittiert wird, kann auf eine $\gamma$-Korrektur im Folgenden verzichtet werden. Die Luftabsorption und die Absorption des Zählrohrfensters wird durch die Korrektur
+\begin{align*}
+  d = d' + \SI{12}{\mm}
+\end{align*}
+berücksichtigt.\\
+\\
+Die Korrektur um Totzeit und Nulleffekt erfolgt wie bisher, allerdings wird die unterschiedliche Totzeit und der unterschiedliche Nulleffekt der anderen Versuchsanordnung berücksichtigt. \\
+\\
+Folgende (bereits korrigierte) Daten werden gemessen:
+
+\begin{table}[htbp]
+\centering
+\caption{Zählrate in Abhängigkeit der Absorberdicke}
+\begin{tabular}{rr}
+\toprule
+$d$ in mm  & $n$ in $\si{s^{-1}}$ \\ 
+\midrule
+12,0 & 113,65 \\ 
+22,0 & 106,96 \\ 
+24,5 & 107,50 \\ 
+37,0 & 98,94 \\ 
+62,0 & 88,77 \\ 
+112,0 & 69,19 \\ 
+212,0 & 47,72 \\ 
+322,0 & 46,28 \\ 
+537,0 & 33,20 \\ 
+992,0 & 17,52 \\ 
+1472,0 & 8,10 \\ 
+2002,0 & 3,12 \\
+\bottomrule 
+\end{tabular}
+\label{}
+\end{table}
+ 
+Um das Abstandsgesetz 
+\begin{align*}
+  n(d) = n_0\cdot e^{-\mu d} \Leftrightarrow  \ln(n) = \ln(n_{NE})- \mu d
+\end{align*}
+zu überprüfen, trägt man die logarithmische Zählrate gegen die Absorberdicke auf und erhält aus einer Regressionsgeraden der Form 
+\[ \ln(n) = m\cdot d + c\]
+die Parameter
+\begin{align*}
+  \mu = -m \\
+  n_0 = e^c
+\end{align*}
+
+
+\subsection{Y-90 Zerfall (höherenergetisch)}
+\label{sec:y-90-zerfall}
+
+Da eine exponentielle Abhängigkeit der Zählrate nur für Absorberdicken hinreichend gut ist, bei denen die Abschwächung unter 50 \% liegt, werden die letzten beiden Messpunkte bei der Regression vernachlässigt. Da sich im Bereich vor $d\approx \SI{200}{\mm}$ zudem beide Zerfallsarten überlagern (und die exponentielle Näherung nur für eine einzelne Zerfallsart zulässig ist) wurden diese Punkte ebenfalls nicht betrachtet.\\
+% 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Diagramme/3_1.eps}
+	\caption{Bestimmung der Absorptionskurve von Y-90}
+\end{figure}
+
+Durch lineare Regression wird die Abhängigkeit
+\[ \ln(n) = -0,00144\cdot d + 4,29044  \]
+ermittelt, woraus folgt
+\begin{align*}
+  \mu = \SI{0,00144}{\micro m^{-1}} = \SI{1440}{m^{-1}} \\
+  n_0 = \SI{72,99858}{s^{-1}}
+\end{align*}
+
+Damit hat die Absorptionskurve im betrachteten Bereich die Form
+\[ n(d) =  \SI{72,99858}{s^{-1}} \cdot e^{-\SI{1440}{m^{-1}}\cdot d}   \]
+und für den \textbf{Absorptionskoeffizienten} folgt
+\[ \mu = \SI{1440}{m^{-1}} \]
+\\
+Der \textbf{Massenabsorptionskoeffizient} $\kappa$ ist als Quotient von Absorptionskoeffizient $\mu$ und Dichte des Absorbermetrials Aluminium $\rho = \SI{2700}{\kg\ m^{-3}}$ definiert. 
+\begin{align*}
+  \kappa &= \dfrac{\mu}{\rho} \\
+         &= \SI{0,533}{\m^2 \kg^{-1}}
+\end{align*}
+\\
+Um die \textbf{Reichweite} der Strahlung abzuschätzen wird die Annahme gemacht, dass diese Absorptionskurve auch für größere Absorberdicken zutreffend ist\footnote{Dies ist allerdings im Widerspruch zur Aussage in der Aufgabenstellung}. Dann ist die Reichweite gleich der Absorberdicke $d_{max}$ für die die Zählrate (aus der bestimmten Absorptionskurve) gleich der Nullrate  $n_{NE} = \SI{0,38}{\s^{-1}}$ ist. \\
+\\
+Also
+\begin{align*}
+  d_{max} &=  \dfrac{1}{\mu}\cdot \ln\left(\dfrac{n_{0}}{n_{NE}}\right) \\
+         &=  \SI{3651,41}{\micro\m}
+\end{align*}
+\\
+Die Berechnung der \textbf{Grenzenergie} erfolgt nach der empirischen Flammersfeld-Beziehung ($W$ in $\si{\MeV}$, $d_{max}$ in $\si{cm}$, $\rho$ in $\si{\g \cm^{-3}}$) 
+\begin{align*}
+   W &= 1,92\cdot \sqrt{d_{max}^2\rho^2 + 0,22\cdot d_{max}\rho}\\
+     &= \SI{2,09}{\MeV}
+\end{align*}
+Diese stimmt mit dem Literaturwert von $W = \SI{2,284}{\MeV}$ (Aufgabenstellung) recht gut überein.
+
+
+\subsection{Sr-90 Zerfall (niederenergetisch)}
+\label{sec:sr-90-zerfall}
+
+Im Diagramm stellt man einen Knick bei $d \approx \SI{200}{\mm}$ fest. Dieser kann dadurch erklärt werden, dass im Präparat Sr-90 zunächst zu Y-90 und Y-90 anschließend zu stabilem Zr-90 zerfällt. Beide $\beta$-Zerfälle haben unterschiedliche Energiespektren, wobei Y-90 eine wesentlich höhere Zerfallsenergie hat. Die Elektronen, die beim Zerfall von Sr-90 emittiert werden, haben durch ihre geringere kinetische Energie also eine geringere Reichweite.\\
+\[ d_{max} \approx \SI{200}{\micro\m}\]
+\\
+Um die (niederenergetische) Absorptionskurve von Sr-90 zu bestimmen, müssen die Messwerte im Bereich $d < \SI{200}{\micro\m}$ noch um den Beitrag der höherenergetischen Betastrahlung von Y-90 korrigiert werden. Mit der bereits bestimmten Absorptionskurve erfolgt die Korrektur durch
+\begin{align*}
+  n_{Sr-90} = n - \SI{72,99858}{s^{-1}} \cdot e^{-\SI{1440}{m^{-1}}\cdot d}
+\end{align*}
+womit sich die Messpunkte in Tabelle \ref{table:gamma-niederenergetisch} ergeben.
+
+\begin{table}[htbp]
+\centering
+\caption{Zählraten (korrigiert um den Einfluss der höherenergetischen Beta-Strahlung)}
+\begin{tabular}{rr}
+\toprule
+$d$ in $\si{\micro\m}$ & $n_{SR-90}$ in $\si{s^{-1}}$ \\
+\midrule 
+12,0 & 41,90 \\ 
+22,0 & 36,24 \\ 
+24,5 & 37,03 \\ 
+37,0 & 29,73 \\ 
+62,0 & 22,01 \\ 
+112,0 & 7,07 \\ 
+\bottomrule
+\end{tabular}
+\label{table:gamma-niederenergetisch}
+\end{table}
+
+Analog zur Bestimmung der Absorptionskurve bei höherenergetischer Betastrahlung wird wieder $\ln(n_{SR-90})$ gegen $d$ abgetragen.
+% 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Diagramme/3_2.eps}
+	\caption{Bestimmung der Absorptionskurve von Sr-90}
+\end{figure}
+
+Durch lineare Regression wird die Abhängigkeit
+\[ \ln(n) = -0,01771\cdot d + 4,02477  \]
+ermittelt, woraus folgt
+\begin{align*}
+  \mu = \SI{0,01771}{\micro m^{-1}} = \SI{17710}{m^{-1}} \\
+  n_0 = \SI{55,967}{s^{-1}}
+\end{align*}
+
+Damit hat die Absorptionskurve im betrachteten Bereich die Form
+\[ n(d) =  \SI{55,967}{s^{-1}} \cdot e^{-\SI{17710}{m^{-1}}\cdot d}   \]
+und für den \textbf{Absorptionskoeffizienten} folgt
+\[ \mu = \SI{17710}{m^{-1}} \]
+\\
+Analog zur Rechnung im letzten Abschnitt werden die verbliebenen Kenngrößen berechnet:
+
+\textbf{Massenabsorptionskoeffizient} $\kappa$
+\begin{align*}
+  \kappa &= \dfrac{\mu}{\rho} \\
+         &= \SI{6,559}{\m^2 \kg^{-1}}
+\end{align*}
+\\\
+\textbf{Grenzenergie} nach empirischer Flammersfeld-Beziehung ($W$ in $\si{\MeV}$, $d_{max}$ in $\si{cm}$, $\rho$ in $\si{\g \cm^{-3}}$) 
+\begin{align*}
+   W &= 1,92\cdot \sqrt{d_{max}^2\rho^2 + 0,22\cdot d_{max}\rho}\\
+     &= \SI{0,234}{\MeV}
+\end{align*}
+Diese weicht jedoch relativ stark vom Literaturwert $W = \SI{0,54}{\MeV}$ ab, was darauf hindeutet, dass die Reichweite der niederenergetischen Beta-Strahlung sehr ungenau bestimmt worden ist.
+
+\section{$\gamma$ -Absorption}
+
+\subsection{Absorptionskurve für Blei von Co-60}
+\label{sec:absorpt-fur-blei}
+
+Der Versuch wird wie in der Ausgabenstellung beschrieben durchgeführt.  Die Intervallzeit wird zu $\Delta t = \SI{100}{\milli\s}$, die Laufzeit zu $T = \SI{300}{s}$ gewählt. Für Absorderdicken $d$ bis $\SI{250}{\mm}$ werden insgesamt acht Messreihen aufgenommen. \\
+\\
+Die Messergebnisse werden um den Nulleffekt und die Totzeit korrigiert.\\
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[!h]
+  \centering
+  \caption{(korrigierte) Messergebnisse: Absorptionsverhalten der Co-60 $\gamma$-Quelle bei verschiedenen Bleidicken}
+    \begin{tabular}{lllllllll}
+    \toprule
+    Dicke $d$ in $\si{\mm}$ &0&10&20&50&100&150&200&250\\
+    \midrule
+    mittlere Zählrate $n'$ in $\si{s^{-1}}$&6,24&5,43&5,09&4,29&3,60&2,80&2,11&1,75\\
+    korr. mittlere Zählrate $n$ in $\si{s^{-1}}$&5,92&5,12&4,78&4,00&3,30&2,50&1,81&1,45\\
+    ln($n$)&1,78&1,63&1,56&1,38&1,20&0,92&1,60&0,37\\	
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Diagramme/ars_4_1_Co-60_ln.eps}
+\caption{Co-60 Zählrate(logarithmisch) über Dicke}
+\label{fig:gamma-absorbtionskurve-1}
+\end{figure}
+
+Durch die Messwerte wird eine Regressionsgerade der Form $y = m\cdot x + c$.
+gelegt (siehe Abbildung \ref{fig:gamma-absorbtionskurve-1}). \\
+\\
+Für die Co-60 Quelle ergibt sich 
+\begin{align*}
+  m = -0,05473 \\
+  c = 1,72021.
+\end{align*}
+
+Daraus lässt sich zunächst der Absorptionskoeffizient $\mu$ und die Anfangszählrate $n_0$ (Herleitung siehe $\beta$- Zerfall) zu 
+\begin{align*}
+  \mu &=  -m = \SI{0,05473}{\micro\m^{-1}} = \SI{5473}{\m^{-1}}\\
+  n_0 &= e^c  = \SI{5,59}{\s^{-1}} 
+\end{align*}
+berechnen.\\
+\\
+Damit gilt für die Absorptionskurve
+\[ n(d)  =\SI{5,59}{\s^{-1}} \cdot e^{\SI{5473}{\m^{-1}}\cdot d}  \]
+
+Der \textbf{Massenabsorptionskoeffizient} ergibt sich mit der Dichte $\rho = \SI{11350}{\kg \m^{-3}}$ zu
+\begin{align*}
+  \kappa &= \dfrac{\mu}{\rho} \\
+         &= \SI{0,474}{\m^2 \kg^{-1}}
+\end{align*}
+\\
+Die \textbf{Halbwertsdicke} ergibt sich zu
+\begin{align*}
+   d_{0,5}&= \ \dfrac{\ln 2}{\mu} \\
+         &= \SI{12,66}{\mm}
+\end{align*}
+
+\begin{figure}[h!]
+\centering
+
+	\includegraphics[scale=0.5]{Diagramme/ars_4_1_Cs-137_ln.eps}
+
+\caption{Cs-137 Zählrate(logarithmisch) über Dicke}
+\end{figure}
+
+
+\subsection{Absorptionskurve für Blei von Cs-137}
+\label{sec:absorpt-fur-blei-2}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[!h]
+  \centering
+  \caption{(korrigierte) Messergebnisse: Absorptionsverhalten der Cs-137 $\gamma$-Quelle bei verschiedenen Bleidicken}
+    \begin{tabular}{lllllllll}
+    \toprule
+    Dicke $d$ in $\si{\mm}$ &0&10&20&50&100&150&200&250\\
+    \midrule
+    mittlere Zählrate $n'$ in $\si{s^{-1}}$&10,10&8,93&8,19&5,97&3,77&2,37&1,51&1,07\\
+    korr. mittlere Zählrate $n$ in $\si{s^{-1}}$&10,06&8,83&8,05&5,75&3,50&2,07&1,20&0,76\\
+    $\ln(n)$&2,31&2,18&2,09&1,75&1,25&0,73&0,18&-0,27\\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+Für Achsenabschnitt und Steigung der Regressionsgerade ergibt sich analog zu oben
+\begin{align*}
+  m = -0,10356 \\
+  c = 2,28633
+\end{align*}
+
+Daraus lässt sich zunächst der Absorptionskoeffizient $\mu$ und die Anfangszählrate $n_0$ (Herleitung siehe $\beta$- Zerfall) zu 
+\begin{align*}
+  \mu &=  -m = \SI{0,10356}{\micro\m^{-1}} = \SI{103560}{\m^{-1}}\\
+  n_0 &= e^c  = \SI{9,84}{\s^{-1}} 
+\end{align*}
+berechnen.\\
+\\
+Damit gilt für die Absorptionskurve
+\[ n(d)  =\SI{9,84}{\s^{-1}} \cdot e^{\SI{103560}{\m^{-1}}\cdot d}  \]
+
+Der \textbf{Massenabsorptionskoeffizient} ergibt sich mit der Dichte $\rho = \SI{11350}{\kg \m^{-3}}$ zu
+\begin{align*}
+  \kappa &= \dfrac{\mu}{\rho} \\
+         &= \SI{47,4}{\m^2 \kg^{-1}}
+\end{align*}
+\\
+Die \textbf{Halbwertsdicke} ergibt sich zu
+\begin{align*}
+  d_{0,5}&= \ \dfrac{\ln 2}{\mu} \\
+        &= \SI{6,70}{\mm}
+\end{align*}
+
+Der deutliche Unterschied der Halbwertsdicken beim Co-60 und Cs-137 $\beta$-Zerfall lässt sich nur auf eine unterschiedliche Energie der Photonen zurückführen, welche beim Co-60 Präparat deutlich höher sein muss. Dieser Befund wird auch durch die Angaben auf dem Arbeitsblatt bestätigt, dargestellt in den Zerfallsschemata (Abbildungen 9 u. 10). Durch die unterschiedliche Photonenenergie werden jeweils unterschiedlich viele Photonen absorbiert, woraus sich die unterschiedlichen Halbwertsdicken erklären. 
+
+\begin{figure}
+	\centering
+        \begin{subfigure}[!h]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{Diagramme/Co-60_zerfallsdiagramm.eps}
+          \caption{Co-60}
+        \end{subfigure}  
+        \begin{subfigure}[!h]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{Diagramme/Cs-137_zerfallsdiagramm.eps}
+          \caption{Cs-137}
+        \end{subfigure}
+        \caption{Zerfallsdiagramme}
+\end{figure}
+
+\subsection{Vergleich unterschiedlicher Absorbermaterialien}
+
+Für diesen Versuch wird verschiedene Materialien hinsichtlich ihrer Abschirmfähigkeit untersucht. Der Nulleffekt $n_{NE}=\SI{0,38}{s^{-1}}$ und die Totzeit $\tau = \SI{4,013}{\ms}$ werden von der Gruppe 38 übernommen. Die Zählrate ohne Absorber wird auf $n_0=\SI{4,41079}{s^{-1}}$ extrapoliert, da hierzu keine Messergebnisse vorliegen. Aus den Diagrammen erkennt man einen linearen Zusammenhang zwischen Absorption $A$ und Dichte $\rho$. Dieser begründet sich damit, dass bei höherer Dichte die Wahrscheinlichkeit steigt, dass die Photonen durch einen Stoß mit einem Atom Energie verlieren und das Material nicht überwinden können. \\
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[htbp]
+  \centering
+  \caption{Absorptionsvermögen unterschiedlicher Materialien}
+\begin{tabular}{rrrrr}
+  \toprule
+  Material & Dicke $d$ in $\si{\mm}$ & Dichte $\rho$ in $\si{g cm^{-2}}$ & Zählrate $n$ &Absorption $A
+  =1-\dfrac{n}{n_0}$  \\ \midrule
+  Eisen & 25,0 & 7,8 & 1,88 & 0,573 \\
+  Plexiglas & 25,0 & 1,18 & 4,04 & 0,083 \\
+  Beton & 25,0 & 2,14 & 3,50 & 0,207 \\
+  Hartholz & 25,0 & 0,68 & 4,38 & 0,007 \\
+  Blei & 25,0 & 11,35 & 0,81 & 0,820 \\ \bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}[h!]
+  \centering
+\includegraphics[scale=0.4]{Diagramme/4_3_1.eps}
+\caption{Zählrate über Dichte}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+	\includegraphics[scale=0.4]{Diagramme/4_3_2.eps}	
+\caption{Absorptionsvermögen über Dichte}
+\end{figure}
+
+
+\end{document} 
+

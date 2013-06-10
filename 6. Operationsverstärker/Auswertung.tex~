@@ -1,0 +1,108 @@
+\documentclass[ngerman]{scrartcl}
+\usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc} % das Trennen der Umlaute
+\usepackage{ngerman}
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            separate-uncertainty = true,
+            multi-part-units=single
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{amsfonts}
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Operationsverstärker}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+%\parindent 0pt
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Transistorverstärker}
+\label{sec:transistorverstarker}
+
+\subsection{gleichstromgegengekoppelte Schaltung}
+\label{sec:vollst-emitt}
+
+Die vollständige Emitter-Verstärkerschaltung wird wie in der Vorbereitungshilfe beschrieben aufgebaut, allerdings wird statt einem $\SI{5}{\micro\farad}$-Kondensator ein $\SI{4,7}{\micro\farad}$-Kondensator verwendet. Am Signalgenerator wurde eine Dreieckspannung mit der Frequenz $f=\SI{1000}{\hertz}$ erzeugt. Die gemessenen Spannungswerte am Ein- und Ausgang sind in Tabelle \ref{table:transistor1} angebeben.
+
+\begin{table}[htbp]
+\centering
+\caption{Messergebnisse gleichstromgegengekoppelte Emitterschaltung}
+\begin{tabular}{rr|r}
+\toprule
+$U_E^{SS}$ in $\si{\mV}$ & $U_A^{SS}$ in $\si{\V}$ & $\beta = \dfrac{U_A^{SS}}{U_E^{SS}}$\\ 
+\midrule
+26 & 4,0 & 153,85 \\ 
+32 & 5,2 & 162,50 \\
+42 & 7,4 & 176,19 \\  
+58 & 9,8 & 168,97 \\ 
+\bottomrule
+\end{tabular}
+\label{table:transistor1}
+\end{table}
+
+Mittelt man über diese Werte, so erhält man einen Verstärkungsfaktor von 
+\begin{align*}
+  \beta = 165,38.
+\end{align*}
+
+Zu bemerken ist, dass der Verstärkungsfaktor in einem relativ breiten Intervall schwankt, was auf eine vergleichsweise schlechte Qualität dieser Transistor-Verstärkerschaltung hindeutet. Bei höheren Eingangsspannungen scheint der Verstärkungsfaktor etwas höher zu liegen, jedoch lässt die geringe Zahl der Messwerte keine genaue Aussage zu. 
+
+\subsection{stromgegengekoppelte Schaltung}
+\label{sec:stromg-schalt}
+
+Bei der vorherigen Schaltung wird nun der Kondensator $C_E$ entfernt, was die Gegenkopplung auf den gesamten Frequenzbereich ausweitet. Die Messwerte (Tabelle \ref{table:transistor2}) werden ganz analog zur vorherigen Teilaufgabe genommen ($f = \SI{1000}{\hertz}$) und wiederum der Verstärkungsfaktor $\beta$ bestimmt. 
+
+\begin{table}[htbp]
+\centering
+\caption{Messergebnisse stromgekoppelte Emitterschaltung}
+\begin{tabular}{rr|r}
+\toprule
+$U_E^{SS}$ in $\si{\mV}$ & $U_A^{SS}$ in $\si{\mV}$ & $\beta = \dfrac{U_A^{SS}}{U_E^{SS}}$\\ 
+\midrule
+25,6 & 114 & 4,45 \\ 
+56,8 & 250 & 4,40 \\ 
+106 & 464 & 4,38 \\ 
+\bottomrule
+\end{tabular}
+\label{table:transistor2}
+\end{table}
+
+Zu beobachten ist hier, dass der Verstärkungsfaktor $\beta$ einer geringeren Schwankung als bei der gleichstromgegengekoppelten Emitterschaltung unterliegt. 
+
+Durch Mittelung über die Verstärkungsfaktoren der einzelnen Messungen ergibt sich 
+\begin{align*}
+  \beta = 4,41.
+\end{align*}
+Der Verstärkungsfaktor ist bei gleicher Frequenz von $f=\SI{1000}{\hertz}$ also wesentlich geringer als bei der gleichstromgegengekoppelten Emitterschaltung. Der Grund dafür ist, dass der Widerstand $R_E$ für hohe Frequenzen nun nicht mehr durch den Kondensator $C_E$ überbrückt wird, so dass an $R_E$ eine höhere Spannung abfällt und der Emitter dementsprechend auf einem höheren Potential liegt. Somit verringert sich die Ausgangsspannung.
+
+\subsection{Verstärkung in Abhängigkeit der Frequenz}
+\label{sec:verst-abhang-der}
+
+% Anodenstrom - Thermokontaktspannung
+\begin{figure}
+  \centering
+  \caption{Verstärkung in Abhängigkeit der Frequenz}
+  \input{Diagramme/frequenz-kopplung}
+\end{figure}
+
+
+
+\end{document}

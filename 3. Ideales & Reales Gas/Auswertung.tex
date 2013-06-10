@@ -40,67 +40,114 @@
 \tableofcontents
 \newpage
 
+
 \section{Spannungskoeffizient $\alpha$ von Luft}
-Zur Bestimmung des Spannungskoeffizienten von Luft wurde ein Jollysches Gasthermometer verwendet. Zuerst wurde die Quecksilbersäule auf Höhe des Dorns eingestellt und ausgemessen. Dies ist der Referenzpunkt, um ein konstantes Volumen für die jeweiligen Messungen zu ermöglichen. Wodurch später die verschiedenen Höhendifferenzen genau bestimmt werden können. Anders als in der Hilfe angegeben wird das schädliche Volumen von Rezipient und Kapillare zusätzlich zur Glasausdehnung mit berücksichtigt. Daher muss die Formel aus der Hilfe zur Bestimmung von $\alpha$ erweitert werden zu:\\
+Zur Bestimmung des Spannungskoeffizienten von Luft wurde ein Jollysches Gasthermometer verwendet. Zuerst wurde die Quecksilbersäule auf höhe des Dorns eingestellt und ausgemessen. Dies ist der Referenzpunkt, um ein konstantes Volumen für die jeweiligen Messungen zu ermöglichen. Wodurch später die verschiedenen Höhendifferenzen genau bestimmt werden können. Anders als in der Hilfe angegeben wird das schädliche Volumen von Rezipent und Kapillare zusätzlich zur Glasausdehnung mit berücksichtigt. Daher muss die Formel aus der Hilfe zur Bestimmung von $\alpha$ erweitert werden zu:\\
 \begin{align*}
 \alpha=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}+\frac{p_K}{p_E}\left( \gamma+\frac{V_K}{V_R}\cdot \frac{1}{T}\right)
 \end{align*}
 Der barometrische Luftdruck wurde mittels digital Barometer auf 997mBar bzw. 747,82Torr bestimmt.
 \renewcommand{\arraystretch}{1.3}
 \begin{table}[htbp]
-  \centering
+\centering
 \caption{Bestimmung des Spannungskoeffizienten $\alpha$ von Luft}
 \begin{tabular}{rrrr}
-  \toprule
-  &Raumtemp. & Eis &kochendes Wasser\\
-  \midrule
-  h in cm&15,9&10,1&36,6\\
-  $\Delta h$ in cm&4,6&-1,2&25,3\\
-  Druck in Torr&793,8&765,8&1000,8\\
-  \bottomrule
+\toprule
+-&Raumtemp. & Eis &kochendes Wasser\\
+\midrule
+h in cm&15,9&10,1&36,6\\
+$\Delta h$ in cm&4,6&-1,2&25,3\\
+Druck in Torr&793,8&735,8&1000,8\\
+\bottomrule
 \end{tabular}
 \label{tab:addlabel}
 \end{table}
 
 Für den systematischen Fehler erhalten wir als Summe aus Ablesefehler $\pm 1$ mm, sowie für das Barometer insgesamt $\pm 3$ Torr. Außerdem bestimmen wir den systematischen Fehler aus der Raumtemperatur:
 \begin{align*}
-  T_{\mathrm{Raum}}&=\frac{273,15K\cdot p_{R}}{p_E}=294,68K\\
-  \Delta T_{sys}&=\left| \dpd{T_{\mathrm{Raum}}}{p_{R}}\right| \cdot \Delta p_{R}+ 
-  \left| \dpd{T_{\mathrm{Raum}}}{p_E} \right|\cdot
-  \Delta p_E=\SI{2,32}{\K}
+T_{Raum}&=\frac{273,15K\cdot p_{R}}{p_E}=294,68K\\
+\Delta T_{sys}&=\big|\frac{\delta T_{Raum}}{\delta p_{R}}\big| \cdot \Delta p_{R}+\big|\frac{\delta T_{Raum}}{\delta p_{E}}\big| \cdot \Delta p_{Raum}=2,32K
 \end{align*}
-Außerdem wurde die Siedetemperatur mithilfe der Formel aus dem
-Versuchsraum zu $\theta_b =\SI{99,55}{\celsius}$ bestimmt, woraus sich
-für den systematischen Fehler ergibt:
+Außerdem wurde die Siedetemperatur mithlife der Formel aus dem Versuchsraum zu $\theta_b =99,55°C$ bestimmt, woraus sich für den systematischen Fehler ergibt
+$\theta_b =|\frac{\delta \theta_b}{\delta b}| \cdot \Delta b=0,037°C$.\\
+Nun kann zunächst der unkorrigierte Spannungskoeffizient bestimmt werden.
 \begin{align*}
-\theta_b &=\left| \dpd{\theta_b}{b} \right| \cdot \Delta b \\
-&= \SI{0,037}{\celsius}  
+\alpha_{unk}&=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}\\
+&=3,62\cdot 10^{-3}\frac{1}{°C}\\
+\Delta \alpha_{unk}&=9,80\cdot 10^{-5}\frac{1}{°C}
 \end{align*}
-
-Nun kann zunächst der unkorrigierte Spannungskoeffizient bestimmt
-werden.
+Um den Spannungskoeffizienten zu bestimmen müss nun noch das Schädliche Volumen bestimmt werden. Dieses setzt sich zusammen aus Kapillare $V_K=l\cdot \pi \cdot r_K^2=(52,7\cdot \pi \cdot (0,05)^2)cm^3=4,14\cdot 10^{-7}m^3$ und Rezipient $V_R=\frac{4}{3} \cdot \pi \cdot r_G^3=(\frac{4}{3} \cdot \pi \cdot (2,8)^3)cm^3=9,20\cdot 10^{-5}m^3$ Die systematischen Fehler ergeben sich wieder durch Größtfehlerabschätzung zu:\\
 \begin{align*}
-  \alpha_{\mathrm{unk}}&=\dfrac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \dfrac{1}{\theta_b}\\
-  &=3,62\cdot 10^{-3}\frac{1}{\si{\celsius}}\\
-  \Delta \alpha_{\mathrm{unk}}&=9,80\cdot 10^{-5} \dfrac{1}{\si{\celsius}}
+\Delta V_K&= \big|\frac{\delta V_K}{\delta l}\big| \cdot \Delta l+
+\big|\frac{\delta V_K}{\delta r_K}\big| \cdot \Delta r_K\\
+&=8,36\cdot 10^{-7}m^3\\
+\Delta V_R&= \big|\frac{\delta V_R}{\delta r}\big| \cdot \Delta r\\
+&=4,93\cdot 10^{-5}m^3
 \end{align*}
-Um den Spannungskoeffizienten zu bestimmen muss nun noch das Schädliche Volumen bestimmt werden. Dieses setzt sich zusammen aus Kapillare $V_K=4,14\cdot 10^{-7}$ und Rezipient $V_R=9,20\cdot 10^{-5}$ Die systematischen Fehler ergeben sich wieder durch Größtfehlerabschätzung zu:\\
-\begin{align*}
-  \Delta V_K&= \left| \dpd{V_K}{l} \right| \Delta l + \left| \dpd{V_K}{r_K} \right|\cdot \Delta r_k \\
-  &= \SI{8,36e-7}{\m^3}\\
-  \Delta V_R&= \left| \dpd{V_R}{r} \right| \cdot \Delta r \\
-&= \SI{4,93e-5}{\m^3}
-\end{align*}
-Für $l$ wurde eine Ablesegenauigkeit von $\pm \SI{1}{\cm}$, für $r_K$ $\pm \SI{0,05}{\cm}$ und für $r$ $\pm \SI{0,5}{\cm}$ angenommen.\\
-Mit den Werten können wir nun den korrigierten Spannungskoeffizienten
-berechnen.
+Für l wurde eine ablesegenauigkeit von $\pm 1$cm, für $r_K$ $\pm 0,05$cm und für r $\pm 0,5$cm angenommen.\\
+Mit den Werten können wir nun den korrigierten Spannungskoeffizienten berechnen.
 \begin{align*}
 \alpha&=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}+\frac{p_K}{p_E}\left( \gamma+\frac{V_K}{V_R}\cdot \frac{1}{T}\right)\\
 &=3,66\cdot 10^{-3}K^{-1}\\
-\Delta \alpha_{sys}&=9,85\cdot 10^{-5} K^{-1}\\
-\Rightarrow \alpha&=\SI{3,66(10)e-3}{\K^{-3}}
+\Delta \alpha_{sys}&=|\frac{\delta \alpha}{\delta \alpha_{unkorr}}|\Delta \alpha_{unkorr}+|\frac{\delta \alpha}{\delta p_K}|\Delta p_K+|\frac{\delta \alpha}{\delta p_E}|\Delta p_E+|\frac{\delta \alpha}{\delta V_K}|\Delta V_K+|\frac{\delta \alpha}{\delta V_R}|\Delta V_R+|\frac{\delta \alpha}{\delta T}|\Delta T\\
+&=9,85\cdot 10^{-5} K^{-1}\\
+\Rightarrow \alpha&=(3,66\pm 0,10)\cdot 10^{-3} K^{-1}
 \end{align*}
-Der erhaltene Wert stimmt mit dem Literaturwert $\alpha_{Lit}=3,66\cdot 10^{-3} K^{-1}$ überein. Die Abweichungen hätten also gar nicht so groß angenommen werden müssen.\\
+Der erhaltene Wert stimmt mit dem Literaturwert $\alpha_{Lit}=3,66\cdot 10^{-3} K^{-1}$ überein. Die Abweichungen hätten also gar nicht so groß anggenommen werden müssen.\\
+Für den absoluten Nullpunkt ergibt sich $T_0=-\frac{1}{\alpha}=-(273,22\pm 7,67)K$, was wiederum mit dem Literaturwert zusammenfällt und zeigt, dass die Fehler sehr groß gewählt wurden.
+\section{Spannungskoeffizient $\alpha$ von Luft}
+Zur Bestimmung des Spannungskoeffizienten von Luft wurde ein Jollysches Gasthermometer verwendet. Zuerst wurde die Quecksilbersäule auf höhe des Dorns eingestellt und ausgemessen. Dies ist der Referenzpunkt, um ein konstantes Volumen für die jeweiligen Messungen zu ermöglichen. Wodurch später die verschiedenen Höhendifferenzen genau bestimmt werden können. Anders als in der Hilfe angegeben wird das schädliche Volumen von Rezipent und Kapillare zusätzlich zur Glasausdehnung mit berücksichtigt. Daher muss die Formel aus der Hilfe zur Bestimmung von $\alpha$ erweitert werden zu:\\
+\begin{align*}
+\alpha=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}+\frac{p_K}{p_E}\left( \gamma+\frac{V_K}{V_R}\cdot \frac{1}{T}\right)
+\end{align*}
+Der barometrische Luftdruck wurde mittels digital Barometer auf 997mBar bzw. 747,82Torr bestimmt.
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[htbp]
+\centering
+\caption{Bestimmung des Spannungskoeffizienten $\alpha$ von Luft}
+\begin{tabular}{rrrr}
+\toprule
+-&Raumtemp. & Eis &kochendes Wasser\\
+\midrule
+h in cm&15,9&10,1&36,6\\
+$\Delta h$ in cm&4,6&-1,2&25,3\\
+Druck in Torr&793,8&735,8&1000,8\\
+\bottomrule
+\end{tabular}
+\label{tab:addlabel}
+\end{table}
+
+Für den systematischen Fehler erhalten wir als Summe aus Ablesefehler $\pm 1$ mm, sowie für das Barometer insgesamt $\pm 3$ Torr. Außerdem bestimmen wir den systematischen Fehler aus der Raumtemperatur:
+\begin{align*}
+T_{Raum}&=\frac{273,15K\cdot p_{R}}{p_E}=294,68K\\
+\Delta T_{sys}&=\big|\frac{\delta T_{Raum}}{\delta p_{R}}\big| \cdot \Delta p_{R}+\big|\frac{\delta T_{Raum}}{\delta p_{E}}\big| \cdot \Delta p_{Raum}=2,32K
+\end{align*}
+Außerdem wurde die Siedetemperatur mithlife der Formel aus dem Versuchsraum zu $\theta_b =99,55°C$ bestimmt, woraus sich für den systematischen Fehler ergibt
+$\theta_b =|\frac{\delta \theta_b}{\delta b}| \cdot \Delta b=0,037°C$.\\
+Nun kann zunächst der unkorrigierte Spannungskoeffizient bestimmt werden.
+\begin{align*}
+\alpha_{unk}&=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}\\
+&=3,62\cdot 10^{-3}\frac{1}{°C}\\
+\Delta \alpha_{unk}&=9,80\cdot 10^{-5}\frac{1}{°C}
+\end{align*}
+Um den Spannungskoeffizienten zu bestimmen müss nun noch das Schädliche Volumen bestimmt werden. Dieses setzt sich zusammen aus Kapillare $V_K=l\cdot \pi \cdot r_K^2=(52,7\cdot \pi \cdot (0,05)^2)cm^3=4,14\cdot 10^{-7}m^3$ und Rezipient $V_R=\frac{4}{3} \cdot \pi \cdot r_G^3=(\frac{4}{3} \cdot \pi \cdot (2,8)^3)cm^3=9,20\cdot 10^{-5}m^3$ Die systematischen Fehler ergeben sich wieder durch Größtfehlerabschätzung zu:\\
+\begin{align*}
+\Delta V_K&= \big|\frac{\delta V_K}{\delta l}\big| \cdot \Delta l+
+\big|\frac{\delta V_K}{\delta r_K}\big| \cdot \Delta r_K\\
+&=8,36\cdot 10^{-7}m^3\\
+\Delta V_R&= \big|\frac{\delta V_R}{\delta r}\big| \cdot \Delta r\\
+&=4,93\cdot 10^{-5}m^3
+\end{align*}
+Für l wurde eine ablesegenauigkeit von $\pm 1$cm, für $r_K$ $\pm 0,05$cm und für r $\pm 0,5$cm angenommen.\\
+Mit den Werten können wir nun den korrigierten Spannungskoeffizienten berechnen.
+\begin{align*}
+\alpha&=\frac{\Delta p_K - \Delta p_E}{\Delta p_E}\cdot \frac{1}{\theta_b}+\frac{p_K}{p_E}\left( \gamma+\frac{V_K}{V_R}\cdot \frac{1}{T}\right)\\
+&=3,66\cdot 10^{-3}K^{-1}\\
+\Delta \alpha_{sys}&=|\frac{\delta \alpha}{\delta \alpha_{unkorr}}|\Delta \alpha_{unkorr}+|\frac{\delta \alpha}{\delta p_K}|\Delta p_K+|\frac{\delta \alpha}{\delta p_E}|\Delta p_E+|\frac{\delta \alpha}{\delta V_K}|\Delta V_K+|\frac{\delta \alpha}{\delta V_R}|\Delta V_R+|\frac{\delta \alpha}{\delta T}|\Delta T\\
+&=9,85\cdot 10^{-5} K^{-1}\\
+\Rightarrow \alpha&=(3,66\pm 0,10)\cdot 10^{-3} K^{-1}
+\end{align*}
+Der erhaltene Wert stimmt mit dem Literaturwert $\alpha_{Lit}=3,66\cdot 10^{-3} K^{-1}$ überein. Die Abweichungen hätten also gar nicht so groß anggenommen werden müssen.\\
 Für den absoluten Nullpunkt ergibt sich $T_0=-\frac{1}{\alpha}=-(273,22\pm 7,67)K$, was wiederum mit dem Literaturwert zusammenfällt und zeigt, dass die Fehler sehr groß gewählt wurden.
 
 \section{Bestimmung des Adiabatenexponenten $\kappa = \dfrac{c_p}{c_v}$}
@@ -124,9 +171,7 @@ Nach der Beziehung aus der Vorbereitung ergibt sich der Adiabatenexponent dann z
 und der systematische Fehler durch Größtfehlerabschätzung zu: 
 \begin{align*}
   \Delta \kappa &= \left| \dpd{\kappa}{\Delta h_1} \right| \cdot \Delta_{\mathrm{Err.}} h_1 + \left| \dpd{\kappa}{\Delta h_2} \right| \cdot \Delta_{\mathrm{Err.}} h_2 \\
-  &= \left| \dfrac{\Delta h_1 + \Delta h_2}{(\Delta h_1 - \Delta
-      h_2)^2} \right| \cdot (\Delta_{\mathrm{Err.}} h_1 +
-  \Delta_{\mathrm{Err.}}h_2)
+  &= \left| \dfrac{h_1 + h_2}{(h_1 - h_2)^2} \right| \cdot \Delta h
 \end{align*}
 
 Folgende Werte werde in insgesamt 5 Messungen für $h_1$ und $h_2$ bestimmt; mit einer geschätzten Messungenauigkeit von $\Delta_{\mathrm{Err.}}h_1 = \Delta_{\mathrm{Err.}}h_2=\SI{2}{\mm}$ werden zudem $\kappa_i$ und $\Delta k_i,\quad i\in (1\dots 4)$ bestimmt.
@@ -137,10 +182,10 @@ Folgende Werte werde in insgesamt 5 Messungen für $h_1$ und $h_2$ bestimmt; mit 
   \toprule
   $\Delta h_1$ in $\si{\mm}$& $\Delta  h_2$ in $\si{\mm}$ & $\kappa_i$ \\
   \midrule
-  90 & 22 & $1,324 \pm 0,097$ \\ 
-  93 & 23 & $1,329 \pm 0,095$ \\ 
-  106 & 25 & $1,309 \pm 0,080$ \\ 
-  148 & 35 & $1,310 \pm 0,057$ \\ 
+  90 & 22 & $1,324 \pm 0,049$ \\ 
+  93 & 23 & $1,329 \pm 0,048$ \\ 
+  106 & 25 & $1,309 \pm 0,040$ \\ 
+  148 & 35 & $1,310 \pm 0,028$ \\ 
   \bottomrule
 \end{tabular}
 \label{}
@@ -148,23 +193,18 @@ Folgende Werte werde in insgesamt 5 Messungen für $h_1$ und $h_2$ bestimmt; mit 
 
 Der Adiabatenexponent $\kappa$ wird aus Mittlung der $\kappa_i$ zu 
 \begin{align*}
-  \kappa = \dfrac{1}{7}\sum\limits_{i=1}^7 \kappa_i
+  \kappa = \dfrac{1}{4}\sum\limits_{i=1}^4 \kappa_i = 1,318 \pm 0,045
 \end{align*}
-berechnet. Um den statistische Fehler zu bestimmen, wird mit Origin
-eine (lineare) Ausgleichsgerade durch die $\kappa_i$ gelegt. Der
-statistische Fehler $\sigma_{\kappa}$ ergibt sich dann als Fehler des
-y-Achsenabschnitts zu
+berechnet. 
+
+Mit der Messunsicherheit 
 \begin{align*}
-  \sigma_{\kappa} = 0,009
+  u &= \dfrac{S}{\sqrt{N}} = \sqrt{\dfrac{1}{N(N-1)}\sum\limits_i (\kappa_{i}-\kappa)^2 } \\
+ &= 0,005
 \end{align*}
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.4]{Diagramme/2_1.eps}
-  \caption{Ermittlung des statistischen Fehler des Adiabatenexponenten}
-\end{figure}
-Damit folgt für den Adiabatenexponent
+folgt für den Adiabatenexponent
 \begin{align*}
-  \kappa = 1,318 \pm 0,082 \pm 0,009
+  \kappa = 1,318 \pm 0,082 \pm 0,005
 \end{align*}
 Der reale Wert $\kappa = 1,4$ liegt damit im angegebenen Fehlerbereich, der relative Fehler ergibt sich zu
 \begin{align*}

@@ -1,0 +1,23 @@
+# epslatex
+set terminal epslatex color
+set output "frequenz-kopplung.tex"
+
+# define axis 
+set xrange [0:100000]
+set yrange [0:200]
+
+# axis labels
+set xlabel '$\frac{\sin\left( \frac{\Delta\alpha}{2} \right)}{\lambda}$'
+set ylabel '$N$'	
+
+# display legend
+#set key at 3.75,-1
+
+
+plot "1_4_strom-gegengekoppelt.dat" notitle lc 7 pointsize 2.5, "1_4_strom-gegengekoppelt.dat" notitle lc 6 pointsize 2.5
+
+set output #Closes the temporary output files.
+!sed 's|includegraphics{temp}|includegraphics{Diagramme/frequenz-kopplung}|' < temp.tex > frequenz-kopplung.tex
+!epstopdf temp.eps --outfile='frequenz-kopplung.pdf'
+
+

@@ -170,16 +170,56 @@ In diesem Versuchsteil wird das Gitter $G_1$ als Beschleunigungsgitter genutzt. 
 
 Zunächst wird der Anodenstrom gegen die Beschleunigungsspannung (korrigiert um Thermokontaktspannung) aufgetragen.
 
-
 Im Diagramm erkennt man einen typischen Knick, dessen Spannungswert der Ionisierungsarbeit in $\si{\eV}$ entspricht. Legt man durch die Punkte vor und nach dem Knick eine Regressionsgerade und bestimmt deren Schnittpunkt, so erhält man
 \begin{align*}
-  E_{\mathrm{Ion.}} = \SI{}{\eV}
+  E_{\mathrm{Ion.}} \approx \SI{17}{\eV}
 \end{align*}
-Verglichen mit dem Literaturwert von $E_{\mathrm{Ion.}} = \SI{10,44}{\eV}$ ergibt sich eine relative Abweichung von \%.
+Verglichen mit dem Literaturwert von $E_{\mathrm{Ion.}} = \SI{10,44}{\eV}$ ergibt sich jedoch eine zu große Abweichung von, so dass ein Fehler in der Rechnung aufgetreten sein muss.
 
-Nun wird der Auffängerstrom gegen die Beschleunigungsspannung aufgetragen und mittels Oszilloskop (\textit{Picoscope}) die Position der Spannungsspitze ermittelt. Diese liegt bei $U_2 = \SI{13,38}{\volt}$. Korrigiert man um die Thermokontaktspannung, so erhält man $U = \SI{}{\volt}$, bzw. 
+Nun wird der Auffängerstrom gegen die Beschleunigungsspannung aufgetragen und mittels Oszilloskop (\textit{Picoscope}) die Position der Spannungsspitze ermittelt. Diese liegt bei $U_2 = \SI{13,38}{\volt}$. Korrigiert man um die Thermokontaktspannung, so erhält man $U = \SI{11,11}{\volt}$, bzw. 
 \begin{align*}
-  E_{\mathrm{Ion.}} = \SI{}{\eV}
+  E_{\mathrm{Ion.}} = \SI{11,11}{\eV}
 \end{align*}
+
+\section{Bestimmung der Energie für die nächsthöhere Anregung von Quecksilber}
+Zur Bestimmung der höheren Anregungsniveaus $a_i$ des Quecksilbers wurde der gleiche Aufbau wie 1.4 gewählt, um wieder den langen Stoßraum zu haben. Die Messungen wurden bei $T=\SI{150}{\celsius}$ durchgeführt, weshalb die Beschleinigungsspannung um die entsprechende Thermokontaktspannung korriegiert werden muss. Insgesamt könnten ??
+Peaks erkannt werden. Diese lassen sich als Linearkombination der ersten beiden Anregungszustände $a_1=\SI{4,9}{\volt}$ und $a_1=\SI{6,7}{\volt}$ darstellen: $p_i=\lambda_i\cdot a_1+\mu_i\cdot a_2$.\\
+Die Werte für $\lambda$ und $\mu$ wurden extrapoliert.
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[htbp]
+\centering
+\caption{Anregungszustände}
+\begin{tabular}{rrrrrrr}
+\toprule
+i & $U_{unkorr}$ & $U_{korr}$ (V) & $\lambda_i$ & $\mu_i$ & Energie (eV) & rel. Abweichung \\
+\midrule
+1 & 6,8 & 4,9 & 1 & 0 & 4,9 & 0 \\
+2 & 11,9 & 10 & 2 & 0 & 9,8 & -0,02 \\
+3 & 13,3 & 11,4 & 1 & 1 & 11,6 & 0,02 \\
+4 & 17,6 & 15,7 & 2 & 1 & 16,5 & 0,05 \\
+5 & 19,5 & 17,6 & 1 & 2 & 18,3 & 0,04 \\
+6 & 21,7 & 19,8 & 4 & 0 & 19,6 & -0,01 \\
+7 & 22,8 & 20,9 & 3 & 1 & 21,4 & 0,02 \\
+8 & 24,1 & 22,2 & 2 & 2 & 23,2 & 0,04 \\
+9 & 26,3 & 24,4 & 5 & 0 & 24,5 & 0 \\
+10 & 28,5 & 26,6 & 4 & 1 & 26,3 & -0,01 \\
+11 & 29,6 & 27,7 & 3 & 2 & 28,1 & 0,01 \\
+12 & 30,6 & 28,7 & 2 & 3 & 29,9 & 0,04 \\
+\bottomrule
+\end{tabular}
+\label{tab:addlabel}
+\end{table}\\
+Die Thermokontaktspannung wurde mit $U_{thermo, \SI{150}{\celsius}}=\SI{1,8}{\volt}$
+angenommen (der zum Zeitpunkt bestimmte Wert macht keinen Sinn. Die Annahme wurde getroffen, sodass der erste Anregungszustand keine Abweichung hat). Die Werte passen sehr gut mit den theoretischen Werten überein, die rel. Abweichung liegt zwischen minus zwei und plus vier Prozent. Diese Abweichungen sind erklärbar durch die nicht immer exakte Sichtbarkeit und damit verbundene Messungenauigkeit, außerdem ist die Thermokontaktspannung fehlerbehaftet.\\
+Dennoch ist Linearkombination aus den beiden Anfangsenergien gut erkennbar.
+\section{Bestimmung der mittleren Anregungsenergie von Neon}
+Es wurde eine Franck-Hertz-Röhre gefüllt mit Neon verwendet, die Temperatur bleibt die Raumtemperatur, da Neon bei hier schon gasförmig vorliegt.\\
+Wir starteten die Beobachtung bei niedrigen Beschleunigungsspannungen. Zuerst entsteht ein Leuchtstreifen in der nähe von G2, dieser wandert mit steigender Spannung zu G1. Ist die Beschleuningungsspannung hoch genug um die Elektronen erneut auf Anregungsenergie zu beschleunigen entsteht ein weiterer Streifen, insgesamt waren 3 Streifen sichtbar.\\
+Bei maximaler Beschleunigungsspannung, $U=\SI{70}{\volt}$ wurde dann die Kurve ausgemessen. Die Abstände Der Peaks lauten $\Delta U_1=\SI{17}{\volt}$, $\Delta U_2=\SI{19}{\volt}$ und $\Delta U_3=\SI{16}{\volt}$.\\
+Daraus ergibt sich eine mittlere Anregungsenergie:
+\begin{align*}
+\Delta \overline{E}=\SI{17,3}{\eV}
+\end{align*}
+Die Messwerte überschneiden sich mit den Literaturwerten. Die Ausmessung an dem Oszilloskop ist ungenau, daher die deutliche Abweichung.
 
 \end{document}

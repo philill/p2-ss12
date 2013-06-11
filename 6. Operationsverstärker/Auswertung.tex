@@ -1,4 +1,4 @@
-\documentclass[ngerman]{scrartcl}
+\documentclass[ngerman, parskip*]{scrartcl}
 \usepackage[latin1]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
 \usepackage[T1]{fontenc} % das Trennen der Umlaute
 \usepackage{ngerman}
@@ -62,7 +62,6 @@ Mittelt man über diese Werte, so erhält man einen Verstärkungsfaktor von
 \begin{align*}
   \beta = 165,38.
 \end{align*}
-
 Zu bemerken ist, dass der Verstärkungsfaktor in einem relativ breiten Intervall schwankt, was auf eine vergleichsweise schlechte Qualität dieser Transistor-Verstärkerschaltung hindeutet. Bei höheren Eingangsspannungen scheint der Verstärkungsfaktor etwas höher zu liegen, jedoch lässt die geringe Zahl der Messwerte keine genaue Aussage zu. 
 
 \subsection{stromgegengekoppelte Schaltung}
@@ -91,10 +90,36 @@ Durch Mittelung über die Verstärkungsfaktoren der einzelnen Messungen ergibt sic
 \begin{align*}
   \beta = 4,41.
 \end{align*}
-Der Verstärkungsfaktor ist bei gleicher Frequenz von $f=\SI{1000}{\hertz}$ also wesentlich geringer als bei der gleichstromgegengekoppelten Emitterschaltung. Der Grund dafür ist, dass der Widerstand $R_E$ für hohe Frequenzen nun nicht mehr durch den Kondensator $C_E$ überbrückt wird, so dass an $R_E$ eine höhere Spannung abfällt und der Emitter dementsprechend auf einem höheren Potential liegt. Somit verringert sich die Ausgangsspannung.
+Der Verstärkungsfaktor ist bei gleicher Frequenz von $f=\SI{1000}{\hertz}$ also wesentlich geringer als bei der gleichstromgegengekoppelten Emitterschaltung. Der Grund dafür ist, dass der Widerstand $R_E$ für hohe Frequenzen nun nicht mehr durch den Kondensator $C_E$ überbrückt wird, so dass an $R_E$ eine höhere Spannung abfällt und der Emitter dementsprechend auf einem höheren Potential liegt. Somit verringert sich die Ausgangsspannung $U_A$.
 
 \subsection{Verstärkung in Abhängigkeit der Frequenz}
 \label{sec:verst-abhang-der}
+
+Nun wird bei strom- und gleichstromgegengekoppelter Schaltung jeweils der Verstärkungsfaktor $\beta = \frac{U_A^{SS}}{U_E^{SS}}$ in Abhängigkeit der Frequenz $f$ bestimmt. Während die Eingangsspannung $U_A$ konstant gehalten wird, wird die Frequenz zwischen $\SI{10}{\Hz}$ und $\SI{100}{\kilo\Hz}$ variiiert. Die aufgenommenen Messwerte sind in Tabelle \ref{table:verstaerkung-frequenz} angegeben. 
+
+\begin{table}[htbp]
+\centering
+\caption{Verstärkung in Abhängigkeit der Frequenz}
+\begin{tabular}{r|rrr|rrr}
+\toprule
+& \multicolumn{3}{c}{gleichstromgegengekoppelt} &\multicolumn{3}{c}{stromgegengekoppelt} \\ 
+$f$ in $\si{\Hz}$ & $U_E$ in $\si{\mV}$ & $U_A$ in $\si{\V}$ & $\beta$  & $U_E$ in $\si{\mV}$ & $U_A$ in $\si{\mV}$ & $\beta$\\ 
+\midrule
+10 & 47,2 & 0,38 & 8,05 & 110 & 108 & 0,98 \\ 
+25 & 48,0 & 0,90 & 18,75 & 108 & 192 & 1,78 \\ 
+50 & 46,4 & 1,50 & 32,33 & 106 & 280 & 2,64 \\ 
+100 & 44,8 & 2,32 & 51,79 & 104 & 384 & 3,69 \\ 
+500 & 42,4 & 6,40 & 150,94 & 104 & 264 & 2,54 \\ 
+1000 & 42,0 & 7,40 & 176,19 & 106 & 464 & 4,38 \\ 
+5000 & 42,4 & 8,20 & 193,40 & 108 & 480 & 4,44 \\ 
+10000 & 42,4 & 8,40 & 198,11 & 108 & 480 & 4,44 \\ 
+50000 & 40,8 & 7,80 & 191,18 & 108 & 472 & 4,37 \\ 
+100000 & 40,8 & 7,40 & 181,37 & 108 & 472 & 4,37 \\ 
+\bottomrule
+\end{tabular}
+\label{table:verstaerkung-frequenz}
+\end{table}
+
 
 % Diagramme (Frequenzabhängige Verstärkung)
 \begin{figure}
@@ -103,13 +128,15 @@ Der Verstärkungsfaktor ist bei gleicher Frequenz von $f=\SI{1000}{\hertz}$ also 
   \input{Diagramme/frequenz-kopplung.tex}
 \end{figure}
 
+Bei der stromgegengekoppelten Schaltung (ohne zusätzlichen Kondensator) nähert sich der Verstärkungsfaktor einem Maximalwert von $\beta^{max} \approx \SI{4,7}{\volt}$ an. Durch die Koppelkondensatoren an Ein- und Ausgang können sehr niederfrequente Spannungssignale kaum passieren (Hochpass), bei hohen Frequenzen stabilisiert sich dann die Verstärkung durch die Emitterseitige Gegenkopplung, die in diesem Fall unabhängig der Frequenz ist.
+
 \begin{figure}
   \centering
   \caption{Frequenzabhängige Verstärkung bei Gleichstromgegenkopplung}
   \input{Diagramme/frequenz-kopplung_gs.tex}
 \end{figure}
 
-
+Bei der gleichstromgegengekoppelten Schaltung (mit zusätzlichem Kondensator) erklärt sich die geringere Verstärkung bei niedrigen Frequenzen analog zum vorherigen Fall durch die als Hochpass wirkenden Koppelkondensatoren. Jedoch wird durch den zusätzlichen Kondensator auf der Emitterseite der Gegenkopplungswiderstand bei hohen Frequenzen überbrückt. Somit tritt bei hohen Frequenzen keine Gegenkopplung mehr auf und der Verstärkungsfaktor ist lediglich durch Versorgungsspannung und Ausgangswiderstand nach oben begrenzt. Im Experiment ergibt sich ein maximaler Verstärkungsfaktor von $\beta \approx 200$
 
 
 \end{document}

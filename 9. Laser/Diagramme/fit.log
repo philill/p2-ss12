@@ -1,0 +1,141 @@
+
+
+*******************************************************************************
+Wed Jun 26 13:35:25 2013
+
+
+FIT:    data read from "2_4.csv" using 1:2
+        format = x:z
+	y range restricted to [0.00000 : 5.00000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9.2975            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 2.06155
+
+initial set of free parameter values
+
+m               = 1
+b               = 1
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.00175
+rel. change during last iteration : -8.01523e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0295804
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000875
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+m               = 1.855            +/- 0.01323      (0.7131%)
+b               = 0.05             +/- 0.03623      (72.46%)
+
+
+correlation matrix of the fit parameters:
+
+               m      b      
+m               1.000 
+b              -0.913  1.000 
+
+
+*******************************************************************************
+Wed Jun 26 13:39:18 2013
+
+
+FIT:    data read from "2_4.csv" using 1:2
+        format = x:z
+	y range restricted to [0.00000 : 5.00000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9.2975            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 2.06155
+
+initial set of free parameter values
+
+m               = 1
+b               = 1
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.00175
+rel. change during last iteration : -8.01523e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0295804
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000875
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+m               = 1.855            +/- 0.01323      (0.7131%)
+b               = 0.05             +/- 0.03623      (72.46%)
+
+
+correlation matrix of the fit parameters:
+
+               m      b      
+m               1.000 
+b              -0.913  1.000 
+
+
+*******************************************************************************
+Wed Jun 26 13:39:55 2013
+
+
+FIT:    data read from "2_4.csv" using 1:2
+        format = x:z
+	y range restricted to [0.00000 : 5.00000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9.2975            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 2.06155
+
+initial set of free parameter values
+
+m               = 1
+b               = 1
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.00175
+rel. change during last iteration : -8.01523e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0295804
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000875
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+m               = 1.855            +/- 0.01323      (0.7131%)
+b               = 0.05             +/- 0.03623      (72.46%)
+
+
+correlation matrix of the fit parameters:
+
+               m      b      
+m               1.000 
+b              -0.913  1.000 

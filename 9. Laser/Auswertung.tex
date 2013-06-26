@@ -1,0 +1,175 @@
+\documentclass[ngerman, parskip*]{scrartcl}
+\usepackage[utf8]{inputenc} 
+\usepackage[ngerman]{babel} % deutsche Sprache
+
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            separate-uncertainty = true,
+            multi-part-units=single
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{amsfonts}
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Laser A}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Bresterwinkel}
+
+\subsection{Brechungsindex von Glas}
+
+Der Bresterwinkel wird über die Reflexion des Laserstrahls an der Zimmerdecke beobachtet, für 
+\begin{align*}
+  \alpha_B &=  \SI{180}{\degree} - \SI{125}{\degree} \\
+  &=  \SI{55}{\degree}
+\end{align*} 
+kann man hier ein Minimum der Intensität beobachten. Aus der bekannten Beziehung aus der Vorbereitung (Annahme für den Brechungsindex von Luft $n_{\textrm{Luft}} = 1$) ergibt sich der Brechungsindex des Glases zu
+\begin{align*}
+  n_{\textrm{Glas}} &= \tan(\alpha_B) \\
+  &= 1,428.
+\end{align*}
+
+Dies liegt in der Größenordnung gängiger optischer Gläser.
+
+Die Bestimmung des Brewsterwinkels über das Maximum der Transmission mithilfe eines Si-Photoelements ist ungenau, da das Spannungssignal des Photoelements während des Messvorgangs zu stark schwankt, um genau messen zu könne, wann das Maximum der Transmission erreicht ist.
+
+
+\section{Beugung an Spalt, Steg, Kreisloch, Kreisblende und Kante}
+
+\subsection{Vergleich der Beugungsfiguren von Spalt und Steg}
+
+%% Hier fehlen die Bilder 
+
+\subsection{Vergleich der Beugungsfiguren von Kreisöffnung, Kreisscheibe und Kante }
+
+Im Versuch konnten die typischen (kreisförmigen) Beugungsminima bei der Beugung an Kreisöffnung und -scheibe nur sehr schlecht beobachet werden. Es konnten jedoch keine nennenswerten Unterschiede zwischen den beiden Beugungsbildern beobachtet werden, so dass man das Babinet-Theorem in diesem Fall bestätigen kann. 
+
+%% Zuordnung der entsprechenden Beugungsbildern schwierig
+
+\subsection{Bestimmung der Breite eines Spalts}
+
+In diesem Versuchsteil wird die Breite eines Einfach-Spalts aus dem -nach Bestrahlung durch Laser-Licht erzeugtem- Beugungsmuster bestimmt. 
+
+Hierzu wurde jeweils der Abstand des n-ten Beugungsminimums von der optischen Achse aus $y_n = \frac{1}{2}\cdot (y_n^{(l)} - y_n^{(r)})$ bestimmt, wobei $y_n^{(l)}$ die y-Position des links und $y_n^{(r)}$ die Position des rechts vom Hauptmaximum liegend Beugungsminimum n-ter Ordnung ist. Die ermittelten Werte sind in Tabelle \ref{table:2_1} dargestellt.
+
+%% @TODO: Wertetabelle, Regression und Berechnung der Spaltbreite
+
+Aus der Position des Spalts $x_1 = \SI{59,3}{\cm}$ und der Position des Schirms $x_2 = \SI{289,8}{\cm}$ ergibt sich der Abstand Spalt-Schirm zu $l = \SI{230,5}{\cm}$. Die Wellenlänge des Lasers war mit $\lambda = \SI{632,8}{\nano\meter}$ angegeben. 
+
+
+\subsection{Durchmesser eines Haares aus Beugungsbild}
+
+Nach dem Babinet-Theorem besitzt das Haar (Steg-förmig) das gleiche Beugungsbild, wie ein Spalt der selben Breite. Folglich kann die Haardicke analog zur ersten Teilaufgabe aus den Abständen der Beugungsminima bestimmt werden. Mit der bekannten Beziehung
+\begin{align*}
+  d = \dfrac{n\lambda l}{y_n} \Rightarrow y_n = \dfrac{\lambda \cdot l}{d}\cdot n
+\end{align*}
+bestimmt werden, wobei $y_n$ der Abstand des n-ten Beugungsminimums von der optischen Achse ist. 
+
+Im Versuch wurde die Lage der Beugungsminima der Ordnung $n=1\dots 4$ vermessen. Die Messwerte sind in Tabelle \ref{table:2_4} dargestellt. 
+
+\begin{table}[!h]
+\centering
+\caption{Position der Beugungsminima}
+\begin{tabular}{l|cccc}
+\toprule
+$n$ & 1 & 2 & 3 & 4 \\ 
+$y_n$ in $\si{\cm}$ & 1.90 & 3.75 & 5.65 & 7.45 \\ 
+\bottomrule
+\end{tabular}
+\label{table:2_4}
+\end{table}
+
+Wie in 2.1 wird nun $y_n$ gegen $n$ aufgetragen und aus der Steigung der Regressionsgerade $m$ die Dicke des Haars zu $d = \frac{\lambda l}{m}$ bestimmt.
+
+\begin{figure}
+  \centering
+  \caption{Regression zur Bestimmung von $m = \dfrac{\lambda \cdot l}{d}$ }
+  \input{Diagramme/2_4.tex}
+\end{figure}
+
+Es ergibt sich 
+\begin{align*}
+  m = \SI {1,855}{\cm}
+\end{align*}
+und mit der Wellenlänge des Lasers $\lambda = \SI{632,8}{\nano\meter}$ und $l = \SI{289,8}{\cm} - \SI{56,2}{\cm} = \SI{233,6}{\cm}$ die Dicke des Haares schließlich zu
+\begin{align*}
+  d = \SI{79,69}{\micro\meter}.
+\end{align*}
+Mit der Micrometerschraube wurde eine Dicke von $d = \SI{55}{\micro\meter}$ bestimmt, was deutlich unter dem Wert aus dem Beugungsexperiment liegt. Dies kann dadurch erklärt werden, dass das Haar hier möglicherweise gequetscht wurde. 
+
+
+%% Beginn: Aufgabenteil Philipp
+
+
+\section{Beugung an Mehrfachspalt und Gittern}
+
+\subsection{Beugungsbilder von Doppel- und Dreifachspalt}
+
+\begin{figure}
+\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Doppelspalt_1.jpg}
+          \caption{Doppelspalt, $d = \SI{0,25}{\mm}$, $b = \SI{0,50}{\mm}$}
+        \end{subfigure}
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Doppelspalt_2.jpg}
+          \caption{Doppelspalt, $d = \SI{0,25}{\mm}$, $b = \SI{0,75}{\mm}$}
+        \end{subfigure}
+\end{figure}
+
+\begin{figure}
+\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Doppelspalt_1.jpg}
+          \caption{Doppelspalt, $d = \SI{0,25}{\mm}$, $b = \SI{0,50}{\mm}$}
+        \end{subfigure}
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Dreifachspalt.jpg}
+          \caption{Dreifachspalt}
+        \end{subfigure}
+\end{figure}
+
+
+\subsection{Beugungsbilder von Kreuz- und Wabengittern}
+
+\begin{figure}
+\centering
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Kreuzgitter.jpg}
+          \caption{Kreuzgitter}
+        \end{subfigure}
+        \begin{subfigure}[!h]{0.49\textwidth}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Bilder/Wabengitter.jpg}
+          \caption{Wabengitter}
+        \end{subfigure}
+\end{figure}
+
+
+
+
+
+\end{document}

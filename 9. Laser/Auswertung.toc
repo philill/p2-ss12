@@ -1,0 +1,11 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Brewsterwinkel}{2}
+\contentsline {subsection}{\numberline {1.1}Brechungsindex von Glas}{2}
+\contentsline {section}{\numberline {2}Beugung an Spalt, Steg, Kreisloch, Kreisblende und Kante}{2}
+\contentsline {subsection}{\numberline {2.1}Bestimmung der Breite eines Spalts}{2}
+\contentsline {subsection}{\numberline {2.2}Vergleich der Beugungsfiguren von Spalt und Steg}{4}
+\contentsline {subsection}{\numberline {2.3}Vergleich der Beugungsfiguren von Kreis\IeC {\"o}ffnung, Kreisscheibe und Kante }{4}
+\contentsline {subsection}{\numberline {2.4}Durchmesser eines Haares aus Beugungsbild}{4}
+\contentsline {section}{\numberline {3}Beugung an Mehrfachspalt und Gittern}{5}
+\contentsline {subsection}{\numberline {3.1}Beugungsbilder von Doppel- und Dreifachspalt}{5}
+\contentsline {subsection}{\numberline {3.2}Beugungsbilder von Kreuz- und Wabengittern}{5}

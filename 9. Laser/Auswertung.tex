@@ -32,7 +32,7 @@
 \tableofcontents
 \newpage
 
-\section{Bresterwinkel}
+\section{Brewsterwinkel}
 
 \subsection{Brechungsindex von Glas}
 
@@ -54,6 +54,49 @@ Die Bestimmung des Brewsterwinkels über das Maximum der Transmission mithilfe e
 
 \section{Beugung an Spalt, Steg, Kreisloch, Kreisblende und Kante}
 
+\subsection{Bestimmung der Breite eines Spalts}
+
+In diesem Versuchsteil wird die Breite eines Einfach-Spalts aus dem -nach Bestrahlung durch Laser-Licht erzeugtem- Beugungsmuster bestimmt. 
+
+Hierzu wurde jeweils der Abstand des n-ten Beugungsminimums von der optischen Achse aus $y_n = \frac{1}{2}\cdot (y_n^{(l)} - y_n^{(r)})$ bestimmt, wobei $y_n^{(l)}$ die y-Position des links und $y_n^{(r)}$ die Position des rechts vom Hauptmaximum liegend Beugungsminimum n-ter Ordnung ist. Die ermittelten Werte für die ersten neun Beugungsminima sind in Tabelle \ref{table:2_1} dargestellt.
+
+\begin{table}[!h]
+\centering
+\caption{Positionen der Beugungsminima}
+\begin{tabular}{l|ccccccccc}
+\toprule
+$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ 
+$y_n$ in $\si{\cm}$ & 0.60 & 1.15 & 1.75 & 2.30 & 2.80 & 3.40 & 3.85 & 4.35 & 4.95 \\ 
+\bottomrule
+\end{tabular}
+\label{table:2_1}
+\end{table}
+
+Nun wird $y_n$ gegen $n$ aufgetragen und aus der Steigung der Regressionsgerade $m$ die Dicke des Haars zu $d = \frac{\lambda l}{m}$ bestimmt.
+
+\begin{figure}
+  \centering
+  \caption{Regression zur Bestimmung von $m = \dfrac{\lambda \cdot l}{d}$ }
+  \input{Diagramme/2_1.tex}
+\end{figure}
+
+Es ergibt sich 
+\begin{align*}
+  m = \SI {0,538}{\cm}
+\end{align*}
+und mit der Wellenlänge des Lasers $\lambda = \SI{632,8}{\nano\meter}$ und $l = \SI{289,8}{\cm} - \SI{59,3}{\cm} = \SI{230,5}{\cm}$ die Dicke des Spalts schließlich zu
+\begin{align*}
+  d = \SI{0,2709}{\milli\meter}.
+\end{align*}
+
+Dies entspricht in etwa dem angegebenen Spaltabstand von $ d = \SI{0,3}{\milli\meter}$.
+
+
+
+%% @TODO: Regression und Berechnung der Spaltbreite
+
+Aus der Position des Spalts $x_1 = \SI{59,3}{\cm}$ und der Position des Schirms $x_2 = \SI{289,8}{\cm}$ ergibt sich der Abstand Spalt-Schirm zu $l = \SI{230,5}{\cm}$. Die Wellenlänge des Lasers war mit $\lambda = \SI{632,8}{\nano\meter}$ angegeben. 
+
 \subsection{Vergleich der Beugungsfiguren von Spalt und Steg}
 
 %% Hier fehlen die Bilder 
@@ -63,17 +106,6 @@ Die Bestimmung des Brewsterwinkels über das Maximum der Transmission mithilfe e
 Im Versuch konnten die typischen (kreisförmigen) Beugungsminima bei der Beugung an Kreisöffnung und -scheibe nur sehr schlecht beobachet werden. Es konnten jedoch keine nennenswerten Unterschiede zwischen den beiden Beugungsbildern beobachtet werden, so dass man das Babinet-Theorem in diesem Fall bestätigen kann. 
 
 %% Zuordnung der entsprechenden Beugungsbildern schwierig
-
-\subsection{Bestimmung der Breite eines Spalts}
-
-In diesem Versuchsteil wird die Breite eines Einfach-Spalts aus dem -nach Bestrahlung durch Laser-Licht erzeugtem- Beugungsmuster bestimmt. 
-
-Hierzu wurde jeweils der Abstand des n-ten Beugungsminimums von der optischen Achse aus $y_n = \frac{1}{2}\cdot (y_n^{(l)} - y_n^{(r)})$ bestimmt, wobei $y_n^{(l)}$ die y-Position des links und $y_n^{(r)}$ die Position des rechts vom Hauptmaximum liegend Beugungsminimum n-ter Ordnung ist. Die ermittelten Werte sind in Tabelle \ref{table:2_1} dargestellt.
-
-%% @TODO: Wertetabelle, Regression und Berechnung der Spaltbreite
-
-Aus der Position des Spalts $x_1 = \SI{59,3}{\cm}$ und der Position des Schirms $x_2 = \SI{289,8}{\cm}$ ergibt sich der Abstand Spalt-Schirm zu $l = \SI{230,5}{\cm}$. Die Wellenlänge des Lasers war mit $\lambda = \SI{632,8}{\nano\meter}$ angegeben. 
-
 
 \subsection{Durchmesser eines Haares aus Beugungsbild}
 
@@ -87,7 +119,7 @@ Im Versuch wurde die Lage der Beugungsminima der Ordnung $n=1\dots 4$ vermessen.
 
 \begin{table}[!h]
 \centering
-\caption{Position der Beugungsminima}
+\caption{Positionen der Beugungsminima}
 \begin{tabular}{l|cccc}
 \toprule
 $n$ & 1 & 2 & 3 & 4 \\ 

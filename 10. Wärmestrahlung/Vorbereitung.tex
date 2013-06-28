@@ -1,0 +1,76 @@
+\documentclass[ngerman, parskip*]{scrartcl}
+\usepackage[utf8]{inputenc} 
+\usepackage[ngerman]{babel} % deutsche Sprache
+
+\usepackage[decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            separate-uncertainty = true,
+            multi-part-units=single
+            ]{siunitx}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{commath}
+\usepackage{amsfonts}
+
+
+\title{Praktikum Klassische Physik Teil 2 (P2)}
+\subtitle{Vorbereitung: Wärmestrahlung}
+\author{Simon Fromme, Philipp Laur}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+
+\section{Planck'sches Strahlungsgesetz}
+
+Sei $n_0$ die Teilchenzahldichte der unangeregten und $n^{*}$ die der angeregten Atome eine Schwarzkörpers. Im thermischen Gleichgewicht ist das Verhältnis der beiden Dichten durch die Boltzmann-Verteilung gegeben.
+\begin{align}\label{eq:boltzmann-verteilung}
+  \dfrac{n^{*}}{n_0} = e^{-hf/(kT)}
+\end{align}
+Teilchen haben nun verschiedene Möglichkeiten zur Wechselwirkung mit der Strahlung. Sei nun nachfolgend mit $\alpha$ die Zahl der Ereignisse pro Volumen und Zeiteinheit bezeichnet. Dann gilt
+\begin{enumerate}
+\item Absorbtion von Strahlung der Energie $hf$ 
+  \[ \alpha_{\textrm{Absorbtion}} = B \cdot \varrho(f,T) \cdot n_0 \]
+\item spontane Emission von Strahlung der Energie $hf$ 
+  \[ \alpha_{\textrm{Emission}} = A \cdot n^{*} \]
+\item stimulierte Emission der Energie $hf$ (direkte Umkehrung der Absorbtion)
+  \[ \alpha_{\textrm{st. Emission}} = B \cdot \varrho(f,T) \cdot n^{*}\]
+\end{enumerate}
+
+Im Gleichgewicht muss nun die Rate der Absorbtion gleich der Rate der Emission sein, es gilt also 
+\begin{align*}
+  \alpha_{\textrm{Absorbtion}} = \alpha_{\textrm{Emission}} + \alpha_{\textrm{st. Emission}}
+\end{align*}
+bzw.
+\begin{align*}
+  & B \cdot \varrho(f,T) n_0 = A \cdot n^{*} + B \cdot \varrho(f,T) n^{*} \\
+  \Rightarrow & \dfrac{n^{*}}{n_0} = \dfrac{B \cdot \varrho(f,T)}{A + B \cdot \varrho(f,T)}
+\end{align*}
+Und mit (\ref{eq:boltzmann-verteilung}),
+\begin{align*}
+  & e^{-hf/(kT)} = \dfrac{B \cdot \varrho(f,T)}{A + B \cdot \varrho(f,T)} \\
+  \Rightarrow & \varrho(f,T) = \dfrac{A}{B} \cdot \dfrac{e^{-hf/(kT)}}{1- e^{-hf/(kT)}} = \dfrac{A}{B} \cdot \dfrac{1}{e^{hf/(kT)}- 1}
+\end{align*}
+Nach weiterer Betrachtung (Eigenschwingungsspektrum Hohlraum) ergibt sich die Konstante zu
+\begin{align*}
+  \frac{A}{B} = \dfrac{8\pi h f^3}{c^3}
+\end{align*}
+und damit das Plancksche Strahlungsgesetz zu 
+\begin{align*}
+   \varrho(f,T) \textrm{d}f = \dfrac{8\pi h f^3}{c^3}  \cdot \dfrac{1}{e^{hf/(kT)}- 1}.
+\end{align*}
+
+
+\end{document}

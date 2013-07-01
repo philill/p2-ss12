@@ -6,6 +6,10 @@
 \contentsline {subsection}{\numberline {2.2}Vergleich der Beugungsfiguren von Spalt und Steg}{4}
 \contentsline {subsection}{\numberline {2.3}Vergleich der Beugungsfiguren von Kreis\IeC {\"o}ffnung, Kreisscheibe und Kante }{4}
 \contentsline {subsection}{\numberline {2.4}Durchmesser eines Haares aus Beugungsbild}{4}
-\contentsline {section}{\numberline {3}Beugung an Mehrfachspalt und Gittern}{5}
-\contentsline {subsection}{\numberline {3.1}Beugungsbilder von Doppel- und Dreifachspalt}{5}
-\contentsline {subsection}{\numberline {3.2}Beugungsbilder von Kreuz- und Wabengittern}{5}
+\contentsline {section}{\numberline {3}Beugung von Mehrfachspalten und Gittern}{5}
+\contentsline {subsection}{\numberline {3.1}Ausmessung Doppelspalt}{5}
+\contentsline {subsection}{\numberline {3.2}Beugungsbilder von Doppel- und Dreifachspalt}{8}
+\contentsline {subsection}{\numberline {3.3}Gitterkonstante eines Strichgitters}{8}
+\contentsline {subsection}{\numberline {3.4}Beugungsbilder von Kreuz- und Wabengittern}{9}
+\contentsline {section}{\numberline {4}Bedeutung der Beugungsordnungen}{9}
+\contentsline {section}{\numberline {5}Holographie}{9}

@@ -88,12 +88,7 @@ und mit der Wellenlänge des Lasers $\lambda = \SI{632,8}{\nano\meter}$ und $l =
 \begin{align*}
   d = \SI{0,2709}{\milli\meter}.
 \end{align*}
-
 Dies entspricht in etwa dem angegebenen Spaltabstand von $ d = \SI{0,3}{\milli\meter}$.
-
-
-
-%% @TODO: Regression und Berechnung der Spaltbreite
 
 Aus der Position des Spalts $x_1 = \SI{59,3}{\cm}$ und der Position des Schirms $x_2 = \SI{289,8}{\cm}$ ergibt sich der Abstand Spalt-Schirm zu $l = \SI{230,5}{\cm}$. Die Wellenlänge des Lasers war mit $\lambda = \SI{632,8}{\nano\meter}$ angegeben. 
 
@@ -151,9 +146,56 @@ Mit der Micrometerschraube wurde eine Dicke von $d = \SI{55}{\micro\meter}$ best
 %% Beginn: Aufgabenteil Philipp
 
 
-\section{Beugung an Mehrfachspalt und Gittern}
+\section{Beugung von Mehrfachspalten und Gittern}
+\subsection{Ausmessung Doppelspalt}
+Im Versuch wurde das Beugungsbild eines Doppelspalts (0,25/0,5) ausgemessen. Die Abstände der Minima werden der jeweiligen Ordung zugeordnet und die jeweilige Entfernung vom Haupmaximum gegen die jeweilige Ordnung aufgetragen. Durch diese Punkte wird analog zum bisherigen Vorgehen eine Ausgleichsgerade $f$ gelegt.
+\begin{figure}
+\centering
+    
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Diagramme/doppel2.jpg}
+          \caption{Doppelspalt, $d = \SI{0,25}{\mm}$, $b = \SI{0,50}{\milli\m}$}
+\end{figure}
 
+Es ergibt sich:
+\begin{align*}
+f(x)=7,2\cdot x-0,07143
+\end{align*}
+Mit der Beziehung aus der Vorbereitung für Beugungsminima am Doppelspalt
+\begin{align*}
+  y_n=\frac{\lambda l}{d}\cdot n\\
+  l=\SI{2,455}{m},\ \lambda=\SI{632,8}{\nano\m}
+\end{align*}
+wird nun die Spaltbreite 
+\begin{align*}
+  d=\SI{0,216}{\milli\m}
+\end{align*}
+bestimmt.
+
+Das Ergebniss liegt in der Nähe der Angabe, man konnte aber auch erkennen, dass der Doppelspalt schon leicht verbogen war. Außerdem ist die Abweichung durch eine nicht optimale Ausleuchtung und die schwierige Ablesbarkeit zu erklären.
+
+Der Spaltabstand wurde wieder mittels einer linearen Regression bestimmt.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Diagramme/doppel1.jpg}
+  \caption{Doppelspalt, $d = \SI{0,25}{\mm}$, $b = \SI{0,50}{\mm}$}
+\end{figure}
+Die Ausgleichsgerade $g$ ergibt sich zu:
+\begin{align*}
+g(x)=1,73712\cdot x+0,2
+\end{align*}
+Aus der Auftragung
+\begin{align*}
+y_n=\frac{\lambda l}{d}\cdot (n+0,5)\\
+l=2,365m,\ \lambda=\SI{632,8}{\nano\m}
+\end{align*}
+erhalten wir für den Spaltabstand 
+\begin{align*}
+d=\SI{0,862}{\milli\m}.
+\end{align*}
+Dieser weicht nun noch deutlicher von der Angabe ab und kann wiederum auf Ablesefehler zurückgeführt werden.
 \subsection{Beugungsbilder von Doppel- und Dreifachspalt}
+Der zweite Doppelspalt(0,25/0,75) hatte die gleiche Einhüllende aber einen größeren Abstand der Maximas, wie zu erwarten war.
 
 \begin{figure}
 \centering
@@ -182,11 +224,25 @@ Mit der Micrometerschraube wurde eine Dicke von $d = \SI{55}{\micro\meter}$ best
           \caption{Dreifachspalt}
         \end{subfigure}
 \end{figure}
-
-
-\subsection{Beugungsbilder von Kreuz- und Wabengittern}
-
+\subsection{Gitterkonstante eines Strichgitters}
+Das Beugungsbild des Gitters wurde wieder ausgemessen. Die Werte wurden folgendermaßen aufgetragen:
+\begin{align*}
+y_n=\lambda l g \cdot n
+\end{align*}
+Hieraus kann dann die Gitterkonstante g bestimmt werden:
+\begin{align*}
+g=\SI{7,268}{mm^{-1}}
+\end{align*}
+Auch dieser Wert weicht deutlich von der Angabe ab, ist aber aufgrund der Messungenauigkeiten noch in Ordnung. Man muss bedenken, dass auch das Gitter nicht beliebig genau gearbeitet wurde.
 \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth,natwidth=2560,natheight=1920]{Diagramme/gitter.jpg}
+          \caption{Bestimmung der Gitterkonstanten}
+          \end{figure}
+\subsection{Beugungsbilder von Kreuz- und Wabengittern}
+Bei dem Kreuzgitter sieht man die Überlagerung, wie man sie erwartet.
+Auch das Beugungsbild des Wabengitters ist schön anzusehen.
+\begin{figure}[!h]
 \centering
         \begin{subfigure}[!h]{0.49\textwidth}
           \centering
@@ -199,8 +255,10 @@ Mit der Micrometerschraube wurde eine Dicke von $d = \SI{55}{\micro\meter}$ best
           \caption{Wabengitter}
         \end{subfigure}
 \end{figure}
-
-
+\section{Bedeutung der Beugungsordnungen}
+Wir beobachteten, dass bei Durchlass der nullten Ordnung nur ein Fleck zu sehen war. Erst mit den zusätzlichen Ordnungen wurde die Information des Gegenstandes auf das Bild übertragen. Die erste Ordnung enthielt zwar schon Information aber erst mit zusätzlichen Ordnungen konnte das Bild scharf dargestellt werden.
+\section{Holographie}
+Wir beobachteten zuerst ein Hologramm, dass speziell für die Wellenlänge des Lasers hergestellt wurde. Hier bestätigt sich unsere Annahme, dass in diesem Bild nun auch die Phasenunterschiede berücksichtigt wurden, wodurch verdeckte Schriften lesbar werden, indem man den Kopf relativ zum Bild bewegt. Auch für Weißlicht war dies an einer speziellen Platte zu beobachten, diese ist aus verschiedenen Schichten für die Wellenlängen aufgebaut.
 
 
 

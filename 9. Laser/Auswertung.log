@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2013.2.20)  27 JUN 2013 12:43
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2013.2.20)  1 JUL 2013 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1775,9 +1775,9 @@ File: Diagramme/2_1.pdf Graphic file (type pdf)
 Package pdftex.def Info: Diagramme/2_1.pdf used on input line 98.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 ) [2]
-Overfull \hbox (22.3937pt too wide) in paragraph at lines 92--93
-[]\OT1/cmr/m/n/10.95 Dies ent-spricht in et-wa dem an-ge-ge-be-nen Spaltab-stan
-d von $\OML/cmm/m/it/10.95 d \OT1/cmr/m/n/10.95 = [] []$. 
+Overfull \hbox (22.3937pt too wide) in paragraph at lines 90--92
+\OT1/cmr/m/n/10.95 Dies ent-spricht in et-wa dem an-ge-ge-be-nen Spaltab-stand 
+von $\OML/cmm/m/it/10.95 d \OT1/cmr/m/n/10.95 = [] []$. 
  []
 
 [3 <./Diagramme/2_1.pdf>] (./Diagramme/2_4.tex
@@ -1787,73 +1787,114 @@ File: Diagramme/2_4.pdf Graphic file (type pdf)
 Package pdftex.def Info: Diagramme/2_4.pdf used on input line 101.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 )
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 147.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 142.
 
 
 (/usr/share/texmf/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [4]
-<Bilder/Doppelspalt_1.jpg, id=28, 2569.6pt x 1927.2pt>
+<Diagramme/doppel2.jpg, id=28, 642.4pt x 481.8pt>
+File: Diagramme/doppel2.jpg Graphic file (type jpg)
+ <use Diagramme/doppel2.jpg>
+Package pdftex.def Info: Diagramme/doppel2.jpg used on input line 156.
+(pdftex.def)             Requested size: 418.25555pt x 313.70296pt.
+
+Overfull \hbox (10.7097pt too wide) in paragraph at lines 151--159
+\OT1/cmr/m/n/10.95 wird ana-log zum bis-he-ri-gen Vor-ge-hen ei-ne Aus-gleichs-
+ge-ra-de $\OML/cmm/m/it/10.95 f$ \OT1/cmr/m/n/10.95 ge-legt.  
+ []
+
+
+Overfull \hbox (50.88298pt too wide) in paragraph at lines 163--165
+\OT1/cmr/m/n/10.95 Mit der Be-zie-hung aus der Vor-be-rei-tung f[]ur Beu-gungs-
+mi-ni-ma am Dop-pel-spalt 
+ []
+
+[5 <./Diagramme/2_4.pdf>] [6 <./Diagramme/doppel2.jpg>]
+Overfull \hbox (2.64201pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10.95 op-ti-ma-le Aus-leuch-tung und die schwie-ri-ge Ab-les-bar-k
+eit zu er-kl[]aren. 
+ []
+
+<Diagramme/doppel1.jpg, id=37, 642.4pt x 481.8pt>
+File: Diagramme/doppel1.jpg Graphic file (type jpg)
+ <use Diagramme/doppel1.jpg>
+Package pdftex.def Info: Diagramme/doppel1.jpg used on input line 180.
+(pdftex.def)             Requested size: 418.25555pt x 313.70296pt.
+
+[7 <./Diagramme/doppel1.jpg>]
+<Bilder/Doppelspalt_1.jpg, id=42, 2569.6pt x 1927.2pt>
 File: Bilder/Doppelspalt_1.jpg Graphic file (type jpg)
 
 <use Bilder/Doppelspalt_1.jpg>
-Package pdftex.def Info: Bilder/Doppelspalt_1.jpg used on input line 162.
+Package pdftex.def Info: Bilder/Doppelspalt_1.jpg used on input line 204.
 (pdftex.def)             Requested size: 204.94751pt x 153.70863pt.
 
-<Bilder/Doppelspalt_2.jpg, id=29, 2569.6pt x 1927.2pt>
+<Bilder/Doppelspalt_2.jpg, id=43, 2569.6pt x 1927.2pt>
 File: Bilder/Doppelspalt_2.jpg Graphic file (type jpg)
 
 <use Bilder/Doppelspalt_2.jpg>
-Package pdftex.def Info: Bilder/Doppelspalt_2.jpg used on input line 167.
+Package pdftex.def Info: Bilder/Doppelspalt_2.jpg used on input line 209.
 (pdftex.def)             Requested size: 204.94751pt x 153.70863pt.
 File: Bilder/Doppelspalt_1.jpg Graphic file (type jpg)
  <use Bilder/Doppelspalt_1.jpg>
-Package pdftex.def Info: Bilder/Doppelspalt_1.jpg used on input line 176.
+Package pdftex.def Info: Bilder/Doppelspalt_1.jpg used on input line 218.
 (pdftex.def)             Requested size: 204.94751pt x 153.70863pt.
 
-<Bilder/Dreifachspalt.jpg, id=30, 2569.6pt x 1927.2pt>
+<Bilder/Dreifachspalt.jpg, id=44, 2569.6pt x 1927.2pt>
 File: Bilder/Dreifachspalt.jpg Graphic file (type jpg)
 
 <use Bilder/Dreifachspalt.jpg>
-Package pdftex.def Info: Bilder/Dreifachspalt.jpg used on input line 181.
+Package pdftex.def Info: Bilder/Dreifachspalt.jpg used on input line 223.
 (pdftex.def)             Requested size: 204.94751pt x 153.70863pt.
 
-<Bilder/Kreuzgitter.jpg, id=31, 2569.6pt x 1927.2pt>
+<Diagramme/gitter.jpg, id=45, 642.4pt x 481.8pt>
+File: Diagramme/gitter.jpg Graphic file (type jpg)
+ <use Diagramme/gitter.jpg>
+Package pdftex.def Info: Diagramme/gitter.jpg used on input line 239.
+(pdftex.def)             Requested size: 418.25555pt x 313.70296pt.
+
+[8 <./Bilder/Doppelspalt_1.jpg> <./Bilder/Doppelspalt_2.jpg>]
+<Bilder/Kreuzgitter.jpg, id=49, 2569.6pt x 1927.2pt>
 File: Bilder/Kreuzgitter.jpg Graphic file (type jpg)
 
 <use Bilder/Kreuzgitter.jpg>
-Package pdftex.def Info: Bilder/Kreuzgitter.jpg used on input line 193.
+Package pdftex.def Info: Bilder/Kreuzgitter.jpg used on input line 249.
 (pdftex.def)             Requested size: 204.94751pt x 153.70863pt.
 
-<Bilder/Wabengitter.jpg, id=32, 2569.6pt x 1927.2pt>
+<Bilder/Wabengitter.jpg, id=50, 2569.6pt x 1927.2pt>
 File: Bilder/Wabengitter.jpg Graphic file (type jpg)
 
 <use Bilder/Wabengitter.jpg>
-Package pdftex.def Info: Bilder/Wabengitter.jpg used on input line 198.
+Package pdftex.def Info: Bilder/Wabengitter.jpg used on input line 254.
 (pdftex.def)             Requested size: 204.94751pt x 153.70863pt.
- [5 <./Diagramme/2_4.pdf>] [6 <./Bilder/Doppelspalt_1.jpg> <./Bilder/Doppelspal
-t_2.jpg> <./Bilder/Dreifachspalt.jpg> <./Bilder/Kreuzgitter.jpg> <./Bilder/Wabe
-ngitter.jpg>] (./Auswertung.aux) ) 
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9 <./Bilder/Dreifachspalt.jpg>] [10 <./Diagramme/gitter.jpg>] [11 <./Bilder/Kr
+euzgitter.jpg> <./Bilder/Wabengitter.jpg>] (./Auswertung.aux) ) 
 Here is how much of TeX's memory you used:
- 14279 strings out of 493633
- 295983 string characters out of 3150839
+ 14294 strings out of 493633
+ 296320 string characters out of 3150839
  300340 words of memory out of 3500000
- 17331 multiletter control sequences out of 15000+200000
+ 17343 multiletter control sequences out of 15000+200000
  17359 words of font info for 68 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 52i,15n,62p,428b,1470s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm
--super-ts1.enc}</usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
-share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Auswertung.pdf (6 pages, 6637235 bytes).
+ 52i,15n,62p,481b,1468s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texm
+f/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+mf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx1
+0.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfrm1095.pfb>
+Output written on Auswertung.pdf (11 pages, 6723849 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
